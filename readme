@@ -1,0 +1,37 @@
+#  PDF RAG Chatbot (FastAPI + FAISS + Groq)
+
+A PDF-based **RAG (Retrieval Augmented Generation)** chatbot that allows users to upload a PDF and ask questions based on its content.  
+It uses **HuggingFace embeddings + FAISS vector search** for retrieval and **Groq LLM (Llama 3.1)** for answer generation.  
+Includes a simple **Streamlit UI** for easy interaction.
+
+## Features
+-  Upload PDF file
+-  Extract text from PDF (pypdf)
+-  Chunking + overlap splitting (RecursiveCharacterTextSplitter)
+-  Embeddings using HuggingFace sentence-transformers
+-  Fast similarity search using FAISS
+-  Answer generation using Groq LLM (Llama 3.1)
+-  Streamlit UI for chatting with the PDF
+-  Answers are generated **only from retrieved PDF context**
+
+---
+
+## How it Works (RAG Pipeline)
+1. User uploads a PDF
+2. Text is extracted from the PDF
+3. Text is split into chunks with overlap
+4. Chunks are converted into embeddings
+5. Embeddings are stored in FAISS vector database
+6. When user asks a question:
+   - Top-k relevant chunks are retrieved using similarity search
+   - Retrieved context + question is sent to Groq LLM
+   - Answer is returned to the user
+
+## 🛠️ Tech Stack
+- **Backend:** FastAPI
+- **Frontend:** Streamlit
+- **LLM:** Groq (Llama 3.1)
+- **Embeddings:** HuggingFace (sentence-transformers)
+- **Vector Store:** FAISS
+- **PDF Parsing:** pypdf
+
