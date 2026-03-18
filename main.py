@@ -7,6 +7,16 @@ from groq import Groq
 from dotenv import load_dotenv
 from rag import load_and_create_vector,search
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 load_dotenv()
 app =FastAPI(title="PDF search and answer")
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
