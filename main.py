@@ -1,16 +1,15 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile,File
 from pydantic import BaseModel
 import shutil
-import os
-import threading
+import os 
 
 from groq import Groq
 from dotenv import load_dotenv
-from rag import load_and_create_vector, search, load_db
+from rag import load_and_create_vector,search
 
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(title="PDF RAG Chatbot")
+app =FastAPI(title="PDF search and answer")
 
 app.add_middleware(
     CORSMiddleware,
@@ -21,15 +20,9 @@ app.add_middleware(
 )
 
 load_dotenv()
-
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-
 UPLOAD_PDF = "uploads"
-os.makedirs(UPLOAD_PDF, exist_ok=True)
-
-# ✅ Load existing FAISS DB on startup
-load_db()
-
+os.makedirs(UPLOAD_PDF,exist_ok=True)
 
 class QuestionRequest(BaseModel):
     question: str
@@ -37,54 +30,46 @@ class QuestionRequest(BaseModel):
 
 @app.get("/")
 def check():
-    return {"status": "API is running"}
-
-
-# ✅ Background processing (NO TIMEOUT)
-def process_pdf(pdf_path):
-    load_and_create_vector(pdf_path)
-
+    return {
+        "Status":"API is running "
+    }
 
 @app.post("/upload")
 async def upload_pdf(file: UploadFile = File(...)):
-    pdf_path = os.path.join(UPLOAD_PDF, file.filename)
-
+    pdf_path = os.path.join(UPLOAD_PDF,file.filename)
     with open(pdf_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-    # ⚡ Run in background thread
-    threading.Thread(target=process_pdf, args=(pdf_path,)).start()
-
+    msg = load_and_create_vector(pdf_path)
     return {
-        "status": "Processing started",
+        "Status":msg,
         "filename": file.filename
     }
-
 
 @app.post("/ask")
 def ask_questions(req: QuestionRequest):
     docs = search(req.question, k=3)
-
     if not docs:
-        return {"answer": "No PDF processed yet. Please upload and wait."}
-
+        return{"answer":"No pdf uploaded yet ."}
+    
     context = "\n\n".join(docs)
 
-    prompt = f"""
+    prompt=f"""
 You are a helpful assistant.
-Answer ONLY using the given context.
-If answer not found, say: "Not found in PDF".
+Answer the following question ONLY based on the context given below .
+If the answer is not found in the context just say: "Not found in PDF".
 
-Context:
+Context is :
 {context}
 
-Question:
+Question is :
 {req.question}
 """
-
     response = client.chat.completions.create(
         model="llama-3.1-8b-instant",
-        messages=[{"role": "user", "content": prompt}],
+        messages=[
+            {"role":"user","content": prompt}
+        ],
         temperature=0.2
     )
 
