@@ -1,16 +1,17 @@
 import streamlit as st
 import requests
-import time
 
+# ✅ CHANGE THIS AFTER DEPLOYMENT
 API_URL = "https://your-fastapi-app.onrender.com"
 
 st.set_page_config(page_title="PDF RAG Chatbot")
 st.title("📄 PDF RAG Chatbot")
+st.write("Upload a PDF and ask questions from it")
 
 # Upload section
 st.subheader("📤 Upload PDF")
 
-uploaded_file = st.file_uploader("Choose PDF", type=["pdf"])
+uploaded_file = st.file_uploader("Choose a PDF file", type=["pdf"])
 
 if st.button("Upload PDF"):
     if uploaded_file is None:
@@ -23,42 +24,32 @@ if st.button("Upload PDF"):
                 "application/pdf",
             )
         }
-
         try:
-            with st.spinner("Uploading..."):
-                res = requests.post(
-                    f"{API_URL}/upload",
-                    files=files,
-                    timeout=120   # ✅ FIXED
-                )
+            with st.spinner("Processing PDF..."):
+                res = requests.post(f"{API_URL}/upload", files=files)
 
             if res.status_code == 200:
-                st.success("✅ Uploaded! Processing in background...")
-
-                st.info("⏳ Wait 5–15 seconds before asking questions.")
-
+                st.success("✅ PDF uploaded & processed successfully!")
             else:
-                st.error(res.text)
-
+                st.error(f"Upload failed: {res.text}")
         except Exception as e:
-            st.error(f"Error: {e}")
+            st.error(f"Error connecting to API: {e}")
 
-
-# Ask section
+# Question section
 st.subheader("💬 Ask Question")
 
 question = st.text_input("Enter your question")
 
 if st.button("Ask"):
     if question.strip() == "":
-        st.warning("Enter a question!")
+        st.warning("Please enter a question!")
     else:
         try:
             with st.spinner("Thinking... 🤖"):
                 res = requests.post(
                     f"{API_URL}/ask",
                     json={"question": question},
-                    timeout=60
+                    timeout=90
                 )
 
             if res.status_code == 200:
@@ -66,7 +57,6 @@ if st.button("Ask"):
                 st.markdown("### 📌 Answer")
                 st.write(data["answer"])
             else:
-                st.error(res.text)
-
+                st.error(f"Error: {res.text}")
         except Exception as e:
-            st.error(f"Error: {e}")
+            st.error(f"Error connecting to API: {e}")

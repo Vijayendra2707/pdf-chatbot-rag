@@ -1,12 +1,13 @@
 from pypdf import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_community.vectorstores import FAISS
 import os
 
-# ✅ Load embeddings ONLY once (IMPORTANT)
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+
+embeddings = SentenceTransformerEmbeddings(
+    model_name="all-MiniLM-L6-v2"
 )
 
 db = None
