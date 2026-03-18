@@ -1,9 +1,11 @@
 fastapi
 uvicorn
-python-dotenv
-pypdf
-langchain
+streamlit
 faiss-cpu
-tiktoken
-groq
+sentence-transformers
+langchain
+langchain-community
+langchain-text-splitters
+langchain_huggingface 
+pydantic
 python-multipart
