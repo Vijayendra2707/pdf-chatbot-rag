@@ -9,6 +9,8 @@ from rag import load_and_create_vector,search
 
 from fastapi.middleware.cors import CORSMiddleware
 
+app =FastAPI(title="PDF search and answer")
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -18,7 +20,6 @@ app.add_middleware(
 )
 
 load_dotenv()
-app =FastAPI(title="PDF search and answer")
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 UPLOAD_PDF = "uploads"
 os.makedirs(UPLOAD_PDF,exist_ok=True)
