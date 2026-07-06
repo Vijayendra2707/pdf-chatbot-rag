@@ -24,6 +24,33 @@ https://pdf-chatbot-rag-y1lv.onrender.com/docs
 
 ---
 
+# 📸 Screenshots
+
+## Home Page
+
+> Add a screenshot of your homepage here.
+
+![Home](images/home.png)
+
+---
+
+## Upload PDF
+
+> Add a screenshot after uploading a PDF.
+
+![Upload](images/upload.png)
+
+---
+
+## Ask Questions
+
+> Add a screenshot showing a successful response.
+
+![Chat](images/chat.png)
+
+---
+
+
 ## ✨ Features
 
 - 📤 Upload PDF documents
