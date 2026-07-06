@@ -14,7 +14,7 @@ Try the deployed application:
 
 **Backend API Docs:** https://pdf-chatbot-rag-y1lv.onrender.com//docs
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Open_Application-success)](https://pdf-chatbot-rag-simple.streamlit.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open%20Application-success)](https://pdf-chatbot-rag-simple.streamlit.app)
 
 [![API Docs](https://img.shields.io/badge/FastAPI-API_Docs-blue)](https://pdf-chatbot-rag-y1lv.onrender.com//docs)
 
