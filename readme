@@ -35,3 +35,4 @@ Includes a simple **Streamlit UI** for easy interaction.
 - **Vector Store:** FAISS
 - **PDF Parsing:** pypdf
 
+Link: https://pdf-chatbot-rag-simple.streamlit.app/
