@@ -20,7 +20,6 @@ EMBEDDING_URL = (
     f"hf-inference/models/{MODEL_NAME}/pipeline/feature-extraction"
 )
 
-
 chunks = []
 
 chunk_vectors = None
