@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM python:3.11-slim
 
 WORKDIR /app
 
@@ -8,8 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# ✅ Render expects this port
 EXPOSE 10000
 
-# ✅ MUST use port 10000
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
+CMD ["sh", "-c", "python -m uvicorn main:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1"]
