@@ -67,10 +67,6 @@ if st.button("Upload PDF"):
 
                 data = response.json()
 
-                st.success(
-                    "PDF uploaded and indexed successfully."
-                )
-
                 st.write(
                     data["status"]
                 )
