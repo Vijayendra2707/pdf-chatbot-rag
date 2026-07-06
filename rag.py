@@ -44,7 +44,7 @@ def extract_pdf_text(pdf_path: str) -> str:
 
 def split_text(
     text: str,
-    chunk_size: int = 700,
+    chunk_size: int = 1000,
     chunk_overlap: int = 100
 ):
 
@@ -56,9 +56,7 @@ def split_text(
 
     while start < len(text):
 
-        chunk = text[
-            start:start + chunk_size
-        ].strip()
+        chunk = text[start:start + chunk_size].strip()
 
         if chunk:
             result.append(chunk)
@@ -66,7 +64,6 @@ def split_text(
         start += step
 
     return result
-
 
 def get_embeddings(texts):
 
@@ -132,54 +129,33 @@ def load_and_create_vector(pdf_path: str):
     full_text = extract_pdf_text(pdf_path)
 
     if not full_text.strip():
+        raise ValueError("No readable text found in PDF")
 
-        raise ValueError(
-            "No readable text found in PDF"
-        )
+    new_chunks = split_text(
+        full_text,
+        chunk_size=1000,
+        chunk_overlap=100
+    )
 
+    # Maximum chunks to index
+    MAX_CHUNKS = 300
 
-    new_chunks = split_text(full_text)
-
-
-    if not new_chunks:
-
-        raise ValueError(
-            "No chunks created from PDF"
-        )
-
-
-    # Limit PDF size for the current lightweight deployment.
-    if len(new_chunks) > 100:
-
-        raise ValueError(
-            "PDF is too large. "
-            "Maximum supported size is 100 chunks."
-        )
-
+    if len(new_chunks) > MAX_CHUNKS:
+        new_chunks = new_chunks[:MAX_CHUNKS]
 
     vectors = get_embeddings(new_chunks)
 
-
     if len(vectors) != len(new_chunks):
-
         raise RuntimeError(
-            "Embedding API returned an unexpected "
-            "number of vectors"
+            "Embedding API returned an unexpected number of vectors"
         )
 
-
-    # Replace the previous document only after
-    # embedding creation succeeds.
     chunks = new_chunks
-
     chunk_vectors = vectors
 
-
     return (
-        f"Created semantic search index "
-        f"with {len(chunks)} chunks"
+        f"Successfully indexed {len(chunks)} document chunks."
     )
-
 
 def search(query: str, k: int = 3):
 
