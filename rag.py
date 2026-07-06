@@ -1,76 +1,123 @@
+from typing import Optional
+
+import numpy as np
 from pypdf import PdfReader
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer
+
 
 chunks = []
-vectorizer = None
-chunk_vectors = None
+
+chunk_vectors: Optional[np.ndarray] = None
 
 
-def extract_pdf_text(pdf_path: str):
+MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+
+
+embedding_model = SentenceTransformer(MODEL_NAME)
+
+
+def extract_pdf_text(pdf_path: str) -> str:
+
     reader = PdfReader(pdf_path)
-    full_text = ""
+
+    pages = []
 
     for page in reader.pages:
+
         text = page.extract_text()
+
         if text:
-            full_text += text + "\n"
 
-    return full_text
+            pages.append(text)
+
+    return "\n".join(pages)
 
 
-def split_text(text: str, chunk_size: int = 800, chunk_overlap: int = 100):
+def split_text(
+    text: str,
+    chunk_size: int = 700,
+    chunk_overlap: int = 100
+):
+
     result = []
+
     start = 0
 
-    while start < len(text):
+    text_length = len(text)
+
+    step = chunk_size - chunk_overlap
+
+    while start < text_length:
+
         end = start + chunk_size
-        result.append(text[start:end])
-        start += chunk_size - chunk_overlap
+
+        chunk = text[start:end].strip()
+
+        if chunk:
+
+            result.append(chunk)
+
+        start += step
 
     return result
 
 
 def load_and_create_vector(pdf_path: str):
-    global chunks, vectorizer, chunk_vectors
+
+    global chunks, chunk_vectors
 
     full_text = extract_pdf_text(pdf_path)
 
     if not full_text.strip():
-        raise ValueError("No readable text found in PDF")
+
+        raise ValueError(
+            "No readable text found in PDF"
+        )
 
     chunks = split_text(full_text)
 
-    vectorizer = TfidfVectorizer(
-        stop_words="english",
-        ngram_range=(1, 2),
-        max_features=10000
+    if not chunks:
+
+        raise ValueError(
+            "No chunks were created from the PDF"
+        )
+
+    chunk_vectors = embedding_model.encode(
+        chunks,
+        batch_size=8,
+        convert_to_numpy=True,
+        normalize_embeddings=True,
+        show_progress_bar=False
+    ).astype(np.float32)
+
+    return (
+        f"Created semantic search index "
+        f"with {len(chunks)} chunks"
     )
-
-    chunk_vectors = vectorizer.fit_transform(chunks)
-
-    return f"Created search index with {len(chunks)} chunks"
 
 
 def search(query: str, k: int = 3):
-    global chunks, vectorizer, chunk_vectors
 
-    if not chunks or vectorizer is None or chunk_vectors is None:
+    global chunks, chunk_vectors
+
+    if not chunks or chunk_vectors is None:
+
         return []
 
-    query_vector = vectorizer.transform([query])
+    query_vector = embedding_model.encode(
+        query,
+        convert_to_numpy=True,
+        normalize_embeddings=True,
+        show_progress_bar=False
+    ).astype(np.float32)
 
-    similarities = cosine_similarity(
-        query_vector,
-        chunk_vectors
-    )[0]
+    similarities = chunk_vectors @ query_vector
 
-    top_indices = similarities.argsort()[::-1][:k]
+    k = min(k, len(chunks))
 
-    results = []
+    top_indices = np.argsort(similarities)[::-1][:k]
 
-    for index in top_indices:
-        if similarities[index] > 0:
-            results.append(chunks[index])
-
-    return results
+    return [
+        chunks[index]
+        for index in top_indices
+    ]

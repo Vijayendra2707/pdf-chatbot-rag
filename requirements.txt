@@ -1,9 +1,10 @@
 fastapi
 uvicorn
 python-multipart
-pypdf
 groq
-python-dotenv
-scikit-learn
+pydantic
+pypdf
+sentence-transformers
+numpy
 streamlit
 requests

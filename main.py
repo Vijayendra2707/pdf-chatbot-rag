@@ -2,68 +2,99 @@ import os
 import shutil
 
 from dotenv import load_dotenv
+
 from fastapi import FastAPI, File, HTTPException, UploadFile
-from fastapi.middleware.cors import CORSMiddleware
 from groq import Groq
 from pydantic import BaseModel
 
 from rag import load_and_create_vector, search
 
 
+# Load variables from .env for local development
 load_dotenv()
 
-app = FastAPI(title="PDF RAG Chatbot API")
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+app = FastAPI(
+    title="PDF RAG Chatbot API"
 )
+
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 if not GROQ_API_KEY:
-    raise RuntimeError("GROQ_API_KEY environment variable is missing")
+    raise RuntimeError(
+        "GROQ_API_KEY environment variable is missing"
+    )
+
 
 client = Groq(api_key=GROQ_API_KEY)
 
 UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+
+os.makedirs(
+    UPLOAD_DIR,
+    exist_ok=True
+)
 
 
 class QuestionRequest(BaseModel):
+
     question: str
 
 
 @app.get("/")
 def health_check():
-    return {"status": "API is running"}
+
+    return {
+        "status": "API is running"
+    }
 
 
 @app.post("/upload")
-async def upload_pdf(file: UploadFile = File(...)):
+async def upload_pdf(
+    file: UploadFile = File(...)
+):
+
     if not file.filename.lower().endswith(".pdf"):
+
         raise HTTPException(
             status_code=400,
             detail="Only PDF files are supported"
         )
 
-    pdf_path = os.path.join(UPLOAD_DIR, file.filename)
+
+    safe_filename = os.path.basename(file.filename)
+
+    pdf_path = os.path.join(
+        UPLOAD_DIR,
+        safe_filename
+    )
+
 
     try:
-        with open(pdf_path, "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
 
-        message = load_and_create_vector(pdf_path)
+        with open(pdf_path, "wb") as buffer:
+
+            shutil.copyfileobj(
+                file.file,
+                buffer
+            )
+
+
+        message = load_and_create_vector(
+            pdf_path
+        )
+
 
         return {
             "status": message,
-            "filename": file.filename
+            "filename": safe_filename
         }
 
+
     except Exception as e:
+
         raise HTTPException(
             status_code=500,
             detail=str(e)
@@ -71,61 +102,109 @@ async def upload_pdf(file: UploadFile = File(...)):
 
 
 @app.post("/ask")
-def ask_question(req: QuestionRequest):
-    if not req.question.strip():
+def ask_question(
+    req: QuestionRequest
+):
+
+    question = req.question.strip()
+
+
+    if not question:
+
         raise HTTPException(
             status_code=400,
             detail="Question cannot be empty"
         )
 
-    docs = search(req.question, k=3)
+
+    docs = search(
+        question,
+        k=3
+    )
+
 
     if not docs:
-        return {
-            "answer": "No relevant information found in the uploaded PDF."
-        }
 
-    context = "\n\n---\n\n".join(docs)
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                "No PDF is currently indexed. "
+                "Upload the PDF again."
+            )
+        )
+
+
+    context = "\n\n---\n\n".join(
+        docs
+    )
+
 
     prompt = f"""
 You are a document question-answering assistant.
 
-Answer the question ONLY using the provided context.
+Answer the user's question using ONLY the provided PDF context.
 
 Rules:
-1. Do not use outside knowledge.
-2. If the answer is not present in the context, respond exactly:
-"Not found in PDF"
-3. Give a concise and clear answer.
 
-CONTEXT:
+1. Do not use outside knowledge.
+
+2. If the answer is not present in the context, respond exactly:
+
+Not found in PDF
+
+3. Give a concise, clear answer.
+
+4. Do not invent information.
+
+PDF CONTEXT:
+
 {context}
 
-QUESTION:
-{req.question}
+
+USER QUESTION:
+
+{question}
+
 
 ANSWER:
 """
 
+
     try:
+
         response = client.chat.completions.create(
+
             model="llama-3.1-8b-instant",
+
             messages=[
                 {
                     "role": "user",
                     "content": prompt
                 }
             ],
-            temperature=0.2,
-            max_tokens=500
+
+            temperature=0,
+
+            max_tokens=400
         )
 
+
+        answer = (
+            response
+            .choices[0]
+            .message
+            .content
+        )
+
+
         return {
-            "question": req.question,
-            "answer": response.choices[0].message.content
+            "question": question,
+            "answer": answer
         }
 
+
     except Exception as e:
+
         raise HTTPException(
             status_code=500,
             detail=f"LLM API error: {str(e)}"
