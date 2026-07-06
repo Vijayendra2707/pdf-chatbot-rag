@@ -1,19 +1,29 @@
-from typing import Optional
+import os
 
 import numpy as np
+import requests
 from pypdf import PdfReader
-from sentence_transformers import SentenceTransformer
 
 
-chunks = []
+HF_TOKEN = os.getenv("HF_TOKEN")
 
-chunk_vectors: Optional[np.ndarray] = None
+if not HF_TOKEN:
+    raise RuntimeError(
+        "HF_TOKEN environment variable is missing"
+    )
 
 
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
+EMBEDDING_URL = (
+    "https://router.huggingface.co/"
+    f"hf-inference/models/{MODEL_NAME}/pipeline/feature-extraction"
+)
 
-embedding_model = SentenceTransformer(MODEL_NAME)
+
+chunks = []
+
+chunk_vectors = None
 
 
 def extract_pdf_text(pdf_path: str) -> str:
@@ -27,7 +37,6 @@ def extract_pdf_text(pdf_path: str) -> str:
         text = page.extract_text()
 
         if text:
-
             pages.append(text)
 
     return "\n".join(pages)
@@ -43,23 +52,77 @@ def split_text(
 
     start = 0
 
-    text_length = len(text)
-
     step = chunk_size - chunk_overlap
 
-    while start < text_length:
+    while start < len(text):
 
-        end = start + chunk_size
-
-        chunk = text[start:end].strip()
+        chunk = text[
+            start:start + chunk_size
+        ].strip()
 
         if chunk:
-
             result.append(chunk)
 
         start += step
 
     return result
+
+
+def get_embeddings(texts):
+
+    response = requests.post(
+        EMBEDDING_URL,
+        headers={
+            "Authorization": f"Bearer {HF_TOKEN}"
+        },
+        json={
+            "inputs": texts,
+            "options": {
+                "wait_for_model": True
+            }
+        },
+        timeout=180
+    )
+
+    if response.status_code != 200:
+
+        raise RuntimeError(
+            f"Embedding API error "
+            f"{response.status_code}: "
+            f"{response.text}"
+        )
+
+
+    embeddings = np.asarray(
+        response.json(),
+        dtype=np.float32
+    )
+
+
+    # Some feature-extraction APIs can return token-level
+    # embeddings instead of one vector per input.
+    if embeddings.ndim == 3:
+        embeddings = embeddings.mean(axis=1)
+
+
+    if embeddings.ndim == 1:
+        embeddings = embeddings.reshape(1, -1)
+
+
+    norms = np.linalg.norm(
+        embeddings,
+        axis=1,
+        keepdims=True
+    )
+
+
+    embeddings = embeddings / np.maximum(
+        norms,
+        1e-12
+    )
+
+
+    return embeddings
 
 
 def load_and_create_vector(pdf_path: str):
@@ -74,21 +137,43 @@ def load_and_create_vector(pdf_path: str):
             "No readable text found in PDF"
         )
 
-    chunks = split_text(full_text)
 
-    if not chunks:
+    new_chunks = split_text(full_text)
+
+
+    if not new_chunks:
 
         raise ValueError(
-            "No chunks were created from the PDF"
+            "No chunks created from PDF"
         )
 
-    chunk_vectors = embedding_model.encode(
-        chunks,
-        batch_size=8,
-        convert_to_numpy=True,
-        normalize_embeddings=True,
-        show_progress_bar=False
-    ).astype(np.float32)
+
+    # Limit PDF size for the current lightweight deployment.
+    if len(new_chunks) > 100:
+
+        raise ValueError(
+            "PDF is too large. "
+            "Maximum supported size is 100 chunks."
+        )
+
+
+    vectors = get_embeddings(new_chunks)
+
+
+    if len(vectors) != len(new_chunks):
+
+        raise RuntimeError(
+            "Embedding API returned an unexpected "
+            "number of vectors"
+        )
+
+
+    # Replace the previous document only after
+    # embedding creation succeeds.
+    chunks = new_chunks
+
+    chunk_vectors = vectors
+
 
     return (
         f"Created semantic search index "
@@ -100,22 +185,32 @@ def search(query: str, k: int = 3):
 
     global chunks, chunk_vectors
 
+
     if not chunks or chunk_vectors is None:
 
         return []
 
-    query_vector = embedding_model.encode(
-        query,
-        convert_to_numpy=True,
-        normalize_embeddings=True,
-        show_progress_bar=False
-    ).astype(np.float32)
 
-    similarities = chunk_vectors @ query_vector
+    query_vector = get_embeddings(
+        [query]
+    )[0]
 
-    k = min(k, len(chunks))
 
-    top_indices = np.argsort(similarities)[::-1][:k]
+    similarities = (
+        chunk_vectors @ query_vector
+    )
+
+
+    k = min(
+        k,
+        len(chunks)
+    )
+
+
+    top_indices = np.argsort(
+        similarities
+    )[::-1][:k]
+
 
     return [
         chunks[index]

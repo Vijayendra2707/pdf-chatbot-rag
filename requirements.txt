@@ -4,8 +4,7 @@ python-multipart
 groq
 pydantic
 pypdf
-sentence-transformers
 numpy
-streamlit
 requests
-dotenv
+python-dotenv
+streamlit

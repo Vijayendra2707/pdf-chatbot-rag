@@ -2,16 +2,19 @@ import os
 import shutil
 
 from dotenv import load_dotenv
-
-from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi import FastAPI
+from fastapi import File
+from fastapi import HTTPException
+from fastapi import UploadFile
 from groq import Groq
 from pydantic import BaseModel
 
-from rag import load_and_create_vector, search
 
-
-# Load variables from .env for local development
 load_dotenv()
+
+
+from rag import load_and_create_vector
+from rag import search
 
 
 app = FastAPI(
@@ -19,15 +22,22 @@ app = FastAPI(
 )
 
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_API_KEY = os.getenv(
+    "GROQ_API_KEY"
+)
+
 
 if not GROQ_API_KEY:
+
     raise RuntimeError(
         "GROQ_API_KEY environment variable is missing"
     )
 
 
-client = Groq(api_key=GROQ_API_KEY)
+client = Groq(
+    api_key=GROQ_API_KEY
+)
+
 
 UPLOAD_DIR = "uploads"
 
@@ -56,7 +66,10 @@ async def upload_pdf(
     file: UploadFile = File(...)
 ):
 
-    if not file.filename.lower().endswith(".pdf"):
+    if (
+        not file.filename
+        or not file.filename.lower().endswith(".pdf")
+    ):
 
         raise HTTPException(
             status_code=400,
@@ -64,7 +77,10 @@ async def upload_pdf(
         )
 
 
-    safe_filename = os.path.basename(file.filename)
+    safe_filename = os.path.basename(
+        file.filename
+    )
+
 
     pdf_path = os.path.join(
         UPLOAD_DIR,
@@ -93,12 +109,34 @@ async def upload_pdf(
         }
 
 
+    except ValueError as e:
+
+        raise HTTPException(
+            status_code=400,
+            detail=str(e)
+        )
+
+
     except Exception as e:
 
         raise HTTPException(
             status_code=500,
             detail=str(e)
         )
+
+
+    finally:
+
+        try:
+            await file.close()
+        except Exception:
+            pass
+
+        try:
+            if os.path.exists(pdf_path):
+                os.remove(pdf_path)
+        except OSError:
+            pass
 
 
 @app.post("/ask")
@@ -117,10 +155,20 @@ def ask_question(
         )
 
 
-    docs = search(
-        question,
-        k=3
-    )
+    try:
+
+        docs = search(
+            question,
+            k=3
+        )
+
+
+    except Exception as e:
+
+        raise HTTPException(
+            status_code=502,
+            detail=f"Embedding API error: {e}"
+        )
 
 
     if not docs:
@@ -129,7 +177,7 @@ def ask_question(
             status_code=409,
             detail=(
                 "No PDF is currently indexed. "
-                "Upload the PDF again."
+                "Upload a PDF first."
             )
         )
 
@@ -148,11 +196,11 @@ Rules:
 
 1. Do not use outside knowledge.
 
-2. If the answer is not present in the context, respond exactly:
+2. If the answer is not present in the provided context, respond exactly:
 
 Not found in PDF
 
-3. Give a concise, clear answer.
+3. Give a concise and clear answer.
 
 4. Do not invent information.
 
@@ -207,5 +255,5 @@ ANSWER:
 
         raise HTTPException(
             status_code=500,
-            detail=f"LLM API error: {str(e)}"
+            detail=f"LLM API error: {e}"
         )
