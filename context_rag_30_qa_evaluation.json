@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "question": "What is considered a full-time employee?",
+    "expected_answer": "An employee regularly scheduled to work at least 40 hours per week.",
+    "category": "direct"
+  },
+  {
+    "id": 2,
+    "question": "What is considered a part-time employee?",
+    "expected_answer": "An employee regularly scheduled to work at least 20 but fewer than 40 hours per week.",
+    "category": "direct"
+  },
+  {
+    "id": 3,
+    "question": "When can an employee first use vacation time?",
+    "expected_answer": "After the first 90 days of employment.",
+    "category": "direct"
+  },
+  {
+    "id": 4,
+    "question": "How much vacation does a full-time employee receive during their first year?",
+    "expected_answer": "Two weeks.",
+    "category": "direct"
+  },
+  {
+    "id": 5,
+    "question": "How many vacation days can an employee carry over from one year to the next?",
+    "expected_answer": "A maximum of five days.",
+    "category": "direct"
+  },
+  {
+    "id": 6,
+    "question": "How much vacation does a full-time employee receive after 16 years of employment?",
+    "expected_answer": "Four weeks.",
+    "category": "direct"
+  },
+  {
+    "id": 7,
+    "question": "How much personal leave is accrued each month?",
+    "expected_answer": "Four hours per month.",
+    "category": "direct"
+  },
+  {
+    "id": 8,
+    "question": "What is the maximum accumulated personal leave for a full-time employee?",
+    "expected_answer": "480 hours.",
+    "category": "direct"
+  },
+  {
+    "id": 9,
+    "question": "How often are employees normally paid?",
+    "expected_answer": "Semi-monthly, on or about the 15th and 30th of each month.",
+    "category": "direct"
+  },
+  {
+    "id": 10,
+    "question": "Can employees have their paycheck deposited directly into their bank account?",
+    "expected_answer": "Yes. Employees may authorize direct deposit by completing the required authorization form.",
+    "category": "direct"
+  },
+  {
+    "id": 11,
+    "question": "How far in advance should vacation normally be requested?",
+    "expected_answer": "At least two weeks in advance.",
+    "category": "procedure"
+  },
+  {
+    "id": 12,
+    "question": "Who approves vacation requests?",
+    "expected_answer": "The employee's immediate supervisor.",
+    "category": "procedure"
+  },
+  {
+    "id": 13,
+    "question": "How are vacation requests handled when multiple employees request the same period?",
+    "expected_answer": "They are generally granted first-come, first-served. In conflicts, staffing needs and length of service are considered.",
+    "category": "procedure"
+  },
+  {
+    "id": 14,
+    "question": "What should an employee do if they will unexpectedly be late or absent?",
+    "expected_answer": "They must personally notify their immediate supervisor or manager as soon as they know. A voicemail or message with another staff member does not qualify.",
+    "category": "procedure"
+  },
+  {
+    "id": 15,
+    "question": "How many days of paid leave are provided for the death of an immediate family member?",
+    "expected_answer": "Up to three days of paid time off.",
+    "category": "policy"
+  },
+  {
+    "id": 16,
+    "question": "How much bereavement leave is provided for an extended family member?",
+    "expected_answer": "One day of paid leave.",
+    "category": "policy"
+  },
+  {
+    "id": 17,
+    "question": "How much notice is generally required for military caregiver leave?",
+    "expected_answer": "Generally, at least 30 days' notice before the leave begins.",
+    "category": "policy"
+  },
+  {
+    "id": 18,
+    "question": "How much FMLA leave can an employee take for their own serious health condition or that of a family member?",
+    "expected_answer": "Up to 12 weeks per year.",
+    "category": "policy"
+  },
+  {
+    "id": 19,
+    "question": "How much military caregiver leave may an eligible employee receive?",
+    "expected_answer": "Up to 26 weeks of unpaid leave within a 12-month period, subject to the overall 26-week FMLA limit described in the handbook.",
+    "category": "policy"
+  },
+  {
+    "id": 20,
+    "question": "What happens if an employee takes more vacation than they have accrued and then leaves the company?",
+    "expected_answer": "They must pay back the vacation time taken but not earned, with the deduction made from their last check.",
+    "category": "policy"
+  },
+  {
+    "id": 21,
+    "question": "I'm a part-time employee working 30 hours per week. How does my vacation entitlement compare with a full-time employee's?",
+    "expected_answer": "Vacation is earned pro-rata. An employee working 30 hours per week earns three-quarters of the vacation amount of a full-time employee.",
+    "category": "multi_hop"
+  },
+  {
+    "id": 22,
+    "question": "If I declined my insurance when I was first eligible, when can I apply again?",
+    "expected_answer": "Generally during Open Enrollment; Special Enrollment may also apply if there is a qualifying life event.",
+    "category": "multi_hop"
+  },
+  {
+    "id": 23,
+    "question": "If I get married, can I enroll in the company's benefit plans outside Open Enrollment?",
+    "expected_answer": "Yes. Marriage is a qualifying event for Special Enrollment, subject to the handbook's applicable enrollment requirements and deadline.",
+    "category": "multi_hop"
+  },
+  {
+    "id": 24,
+    "question": "If I'm injured at work, who must I notify and why?",
+    "expected_answer": "Immediately notify the Manager and Human Resources so the company can help obtain appropriate medical treatment. Failure to follow the procedure may delay workers' compensation benefits.",
+    "category": "multi_hop"
+  },
+  {
+    "id": 25,
+    "question": "Can I work from home three days a week?",
+    "expected_answer": "The handbook permits telecommuting up to three days per week with supervisor approval, and not all jobs are suitable for telecommuting.",
+    "category": "multi_hop"
+  },
+  {
+    "id": 26,
+    "question": "What happens if bad weather prevents me from getting to work while the company remains open?",
+    "expected_answer": "The absence is charged first to personal/sick time, then vacation time, and then unpaid time.",
+    "category": "multi_hop"
+  },
+  {
+    "id": 27,
+    "question": "If the company closes early because of severe weather, do employees get paid for the rest of the day?",
+    "expected_answer": "Yes. Employees are compensated as though they had worked until the end of their regularly scheduled hours.",
+    "category": "multi_hop"
+  },
+  {
+    "id": 28,
+    "question": "If I'm called for jury duty, do my company benefits continue?",
+    "expected_answer": "Yes. During jury duty, employees continue participating in insurance and other benefits as if they were working. Full-time employees also receive the difference between jury-duty compensation and current daily pay for the first five days, subject to applicable law.",
+    "category": "multi_hop"
+  },
+  {
+    "id": 29,
+    "question": "If I resign, what happens to my unused vacation and personal leave?",
+    "expected_answer": "Accrued but unused vacation is paid in the final paycheck, while accrued but unused personal time is not paid upon termination. Excess leave used can be deducted from the final check(s).",
+    "category": "multi_hop"
+  },
+  {
+    "id": 30,
+    "question": "If an employee believes they were discriminated against, what should they do, and are they protected from retaliation?",
+    "expected_answer": "They should report the matter to Human Resources. The handbook states that there will be no retaliation for a good-faith complaint, even if the investigation does not find sufficient evidence.",
+    "category": "multi_hop"
+  }
+]

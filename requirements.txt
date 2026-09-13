@@ -8,3 +8,7 @@ numpy
 requests
 python-dotenv
 streamlit
+
+rank-bm25
+sentence-transformers
+redis

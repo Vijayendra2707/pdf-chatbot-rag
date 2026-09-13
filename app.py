@@ -1,10 +1,20 @@
 import os
-
+import uuid
 import requests
 import streamlit as st
 
 
-API_URL ="https://pdf-chatbot-rag-y1lv.onrender.com"
+API_URL = "https://pdf-chatbot-rag-y1lv.onrender.com"
+
+
+# Create one session ID per browser session
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+
+# Store displayed chat messages
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 
 st.set_page_config(
@@ -20,6 +30,53 @@ st.write(
     "based on its contents."
 )
 
+
+# ============================================================
+# SIDEBAR
+# ============================================================
+
+with st.sidebar:
+
+    st.header("💬 Conversation")
+
+    st.caption(
+        "Your conversation history is stored using Redis."
+    )
+
+    if st.button("🗑️ Clear Chat", use_container_width=True):
+
+        try:
+
+            response = requests.delete(
+                f"{API_URL}/memory/{st.session_state.session_id}",
+                timeout=30
+            )
+
+            if response.ok:
+
+                st.session_state.messages = []
+
+                st.success("Chat memory cleared.")
+
+                st.rerun()
+
+            else:
+
+                st.error(
+                    f"Failed to clear memory "
+                    f"({response.status_code})"
+                )
+
+        except requests.exceptions.RequestException as e:
+
+            st.error(
+                f"Backend connection error: {e}"
+            )
+
+
+# ============================================================
+# UPLOAD PDF
+# ============================================================
 
 st.subheader("📤 Upload PDF")
 
@@ -37,7 +94,6 @@ if st.button("Upload PDF"):
         st.warning(
             "Please upload a PDF first."
         )
-
 
     else:
 
@@ -71,7 +127,6 @@ if st.button("Upload PDF"):
                     "PDF uploaded successfully."
                 )
 
-
             else:
 
                 try:
@@ -100,6 +155,33 @@ if st.button("Upload PDF"):
             )
 
 
+# ============================================================
+# CHAT HISTORY
+# ============================================================
+
+if st.session_state.messages:
+
+    st.markdown("### 💬 Chat History")
+
+    for message in st.session_state.messages:
+
+        if message["role"] == "user":
+
+            with st.chat_message("user"):
+
+                st.write(message["content"])
+
+        else:
+
+            with st.chat_message("assistant"):
+
+                st.write(message["content"])
+
+
+# ============================================================
+# ASK QUESTION
+# ============================================================
+
 st.subheader("💬 Ask Question")
 
 
@@ -116,7 +198,6 @@ if st.button("Ask"):
             "Please enter a question."
         )
 
-
     else:
 
         try:
@@ -130,7 +211,8 @@ if st.button("Ask"):
                     f"{API_URL}/ask",
 
                     json={
-                        "question": question
+                        "question": question,
+                        "session_id": st.session_state.session_id
                     },
 
                     timeout=180
@@ -139,13 +221,64 @@ if st.button("Ask"):
 
             if response.ok:
 
-                st.markdown(
-                    "### 📌 Answer"
+                data = response.json()
+
+                answer = data["answer"]
+
+
+                # Save messages for current Streamlit UI
+                st.session_state.messages.append(
+                    {
+                        "role": "user",
+                        "content": question
+                    }
                 )
 
-                st.write(
-                    response.json()["answer"]
+                st.session_state.messages.append(
+                    {
+                        "role": "assistant",
+                        "content": answer
+                    }
                 )
+
+
+                # Display answer
+                st.markdown("### 📌 Answer")
+
+                st.write(answer)
+
+
+                # ====================================================
+                # SOURCES
+                # ====================================================
+
+                if "sources" in data and data["sources"]:
+
+                    st.markdown("### 📚 Sources")
+
+                    seen_pages = set()
+
+                    for source in data["sources"]:
+
+                        page = source["page"]
+
+                        # Avoid duplicate pages
+                        if page in seen_pages:
+                            continue
+
+                        seen_pages.add(page)
+
+                        with st.expander(
+                            f"📄 Page {page}"
+                        ):
+
+                            st.caption(
+                                "Relevant passage from your PDF"
+                            )
+
+                            st.write(
+                                source["excerpt"]
+                            )
 
 
             else:

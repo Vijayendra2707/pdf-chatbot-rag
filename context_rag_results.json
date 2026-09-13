@@ -1,0 +1,1742 @@
+[
+  {
+    "id": 1,
+    "question": "What is considered a full-time employee?",
+    "expected_answer": "An employee regularly scheduled to work at least 40 hours per week.",
+    "category": "direct",
+    "session_id": "2cbfab3b-9bd4-4fbb-a902-3ff9a76adc68",
+    "client_total_latency_ms": 4805.28,
+    "api_response": {
+      "question": "What is considered a full-time employee?",
+      "answer": "A full‑time employee is someone who is regularly scheduled to work **at least 40 hours per week**.",
+      "sources": [
+        {
+          "page": 8,
+          "excerpt": "Full-Time Employee \nFull-time employees are those who are regularly scheduled to work at least 40 hours per week.2 \n                                                 \n1 If you provide rewards for such referrals describe them here. , advising the \nemployees that certain provisions do not apply to them."
+        },
+        {
+          "page": 9,
+          "excerpt": "If your status changes from temporary or casual to part-time or full-time, you are considered \nhired on the date you become a full-time or part-time employee for purposes of calculating \neligibility for benefits that require a minimum term of employment. Casual Employee \nEmployees who work on an occasional or as needed basis."
+        },
+        {
+          "page": 9,
+          "excerpt": "2 Some employers consider full time 35 or 37.5 hours per week. You may set full-time at any level you wish. With the exception of these plans, the employer may determine at what point part -time \nemployees will be able to enjoy benefits. You \nmerely need to pay non-exempt employees overtime if they work more than 40 hours in a week."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 516.9864999988931,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2973.64430000016,
+        "llm_time_ms": 1098.2918000008794,
+        "total_time_ms": 4784.776899999997
+      }
+    },
+    "answer": "A full‑time employee is someone who is regularly scheduled to work **at least 40 hours per week**.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 516.9864999988931,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2973.64430000016,
+      "llm_time_ms": 1098.2918000008794,
+      "total_time_ms": 4784.776899999997
+    },
+    "sources": [
+      {
+        "page": 8,
+        "excerpt": "Full-Time Employee \nFull-time employees are those who are regularly scheduled to work at least 40 hours per week.2 \n                                                 \n1 If you provide rewards for such referrals describe them here. , advising the \nemployees that certain provisions do not apply to them."
+      },
+      {
+        "page": 9,
+        "excerpt": "If your status changes from temporary or casual to part-time or full-time, you are considered \nhired on the date you become a full-time or part-time employee for purposes of calculating \neligibility for benefits that require a minimum term of employment. Casual Employee \nEmployees who work on an occasional or as needed basis."
+      },
+      {
+        "page": 9,
+        "excerpt": "2 Some employers consider full time 35 or 37.5 hours per week. You may set full-time at any level you wish. With the exception of these plans, the employer may determine at what point part -time \nemployees will be able to enjoy benefits. You \nmerely need to pay non-exempt employees overtime if they work more than 40 hours in a week."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What is considered a part-time employee?",
+    "expected_answer": "An employee regularly scheduled to work at least 20 but fewer than 40 hours per week.",
+    "category": "direct",
+    "session_id": "898e2c1f-4d23-4e42-b5a7-5f56ba0d377a",
+    "client_total_latency_ms": 4157.1,
+    "api_response": {
+      "question": "What is considered a part-time employee?",
+      "answer": "A part‑time employee is someone who is regularly scheduled to work **at least 20 but fewer than 40 hours per week**.",
+      "sources": [
+        {
+          "page": 9,
+          "excerpt": "If your status changes from temporary or casual to part-time or full-time, you are considered \nhired on the date you become a full-time or part-time employee for purposes of calculating \neligibility for benefits that require a minimum term of employment. Casual Employee \nEmployees who work on an occasional or as needed basis."
+        },
+        {
+          "page": 15,
+          "excerpt": "me or lunch time. Exempt employees usually"
+        },
+        {
+          "page": 9,
+          "excerpt": "You may, if you wish, include these people  as \npart-time employees and change the definition of part-time. or may not be regularly scheduled. Of course, if you rarely if ever use such employees, you \nmay delete this category."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 512.7655999967828,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2917.4435999957495,
+        "llm_time_ms": 662.1993000007933,
+        "total_time_ms": 4144.374199997401
+      }
+    },
+    "answer": "A part‑time employee is someone who is regularly scheduled to work **at least 20 but fewer than 40 hours per week**.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 512.7655999967828,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2917.4435999957495,
+      "llm_time_ms": 662.1993000007933,
+      "total_time_ms": 4144.374199997401
+    },
+    "sources": [
+      {
+        "page": 9,
+        "excerpt": "If your status changes from temporary or casual to part-time or full-time, you are considered \nhired on the date you become a full-time or part-time employee for purposes of calculating \neligibility for benefits that require a minimum term of employment. Casual Employee \nEmployees who work on an occasional or as needed basis."
+      },
+      {
+        "page": 15,
+        "excerpt": "me or lunch time. Exempt employees usually"
+      },
+      {
+        "page": 9,
+        "excerpt": "You may, if you wish, include these people  as \npart-time employees and change the definition of part-time. or may not be regularly scheduled. Of course, if you rarely if ever use such employees, you \nmay delete this category."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "When can an employee first use vacation time?",
+    "expected_answer": "After the first 90 days of employment.",
+    "category": "direct",
+    "session_id": "60f3a605-5272-45f3-9ea2-bb6d1afc9c5b",
+    "client_total_latency_ms": 4111.08,
+    "api_response": {
+      "question": "When can an employee first use vacation time?",
+      "answer": "Employees may begin using vacation after completing their first 90 days of employment.",
+      "sources": [
+        {
+          "page": 29,
+          "excerpt": "Employees \nmay use their vacation at any time after the first 90 days of employment. However, if an \nemployee leaves the Company, vacation will be calculated on a pro-rata basis for the time \nworked. Eligibility \nEmployees begin accruing vacation when they first begin work for the Company. The deduction will be made from the employee’s last check."
+        },
+        {
+          "page": 29,
+          "excerpt": "For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw Vacation \nThe Company recognizes the importance of vacation time in providing rest, recreation and \npersonal enrichment. oyees may take for religious observance, e.g., Jewish High Holy Days."
+        },
+        {
+          "page": 13,
+          "excerpt": "- 13 - \ncharged to (1) personal/sick time, (2) vacation time, or (3) unpaid time, in that order. If you elect to leave prior to the time a \ndecision is made by the Company to close early, you will be required to use accrued time at the \nsame rate as if you arrive after the scheduled start time."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 505.96860000223387,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2880.204799999774,
+        "llm_time_ms": 650.8340000000317,
+        "total_time_ms": 4095.7975999990595
+      }
+    },
+    "answer": "Employees may begin using vacation after completing their first 90 days of employment.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 505.96860000223387,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2880.204799999774,
+      "llm_time_ms": 650.8340000000317,
+      "total_time_ms": 4095.7975999990595
+    },
+    "sources": [
+      {
+        "page": 29,
+        "excerpt": "Employees \nmay use their vacation at any time after the first 90 days of employment. However, if an \nemployee leaves the Company, vacation will be calculated on a pro-rata basis for the time \nworked. Eligibility \nEmployees begin accruing vacation when they first begin work for the Company. The deduction will be made from the employee’s last check."
+      },
+      {
+        "page": 29,
+        "excerpt": "For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw Vacation \nThe Company recognizes the importance of vacation time in providing rest, recreation and \npersonal enrichment. oyees may take for religious observance, e.g., Jewish High Holy Days."
+      },
+      {
+        "page": 13,
+        "excerpt": "- 13 - \ncharged to (1) personal/sick time, (2) vacation time, or (3) unpaid time, in that order. If you elect to leave prior to the time a \ndecision is made by the Company to close early, you will be required to use accrued time at the \nsame rate as if you arrive after the scheduled start time."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "question": "How much vacation does a full-time employee receive during their first year?",
+    "expected_answer": "Two weeks.",
+    "category": "direct",
+    "session_id": "7650c0ca-1e82-4c28-b27b-61fbbd83c171",
+    "client_total_latency_ms": 5948.9,
+    "api_response": {
+      "question": "How much vacation does a full-time employee receive during their first year?",
+      "answer": "Two weeks of vacation in the first year.",
+      "sources": [
+        {
+          "page": 29,
+          "excerpt": "Full-time employees earn vacation time as follows: \n \n 1st year of employment      Two (2) weeks  \n 2nd through 5th year of employment   Twelve (12) days \n 6th through 15th year of employment   Three (3) weeks \n 16th year of employment and following  Four (4) weeks \n \nPart-time employees earn vacation on a pro-rata basis."
+        },
+        {
+          "page": 29,
+          "excerpt": "ks 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nworking one-half time earns one-half the vacation of a full-time employee. Employees \nmay use their vacation at any time after the first 90 days of employment. Eligibility \nEmployees begin accruing vacation when they first begin work for the Company."
+        },
+        {
+          "page": 31,
+          "excerpt": "You may carry over personal leave from year to year and accumulate a maximum \nof 480 hours of leave for full-time employees and 240 hours for part-time employees. Employer Note: Determining how much leave to provide employees is always a challenge. You are not required to give any specific reason for using your personal/sick time."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 489.2796999993152,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 4750.298599996313,
+        "llm_time_ms": 640.8281999974861,
+        "total_time_ms": 5936.572300000989
+      }
+    },
+    "answer": "Two weeks of vacation in the first year.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 489.2796999993152,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 4750.298599996313,
+      "llm_time_ms": 640.8281999974861,
+      "total_time_ms": 5936.572300000989
+    },
+    "sources": [
+      {
+        "page": 29,
+        "excerpt": "Full-time employees earn vacation time as follows: \n \n 1st year of employment      Two (2) weeks  \n 2nd through 5th year of employment   Twelve (12) days \n 6th through 15th year of employment   Three (3) weeks \n 16th year of employment and following  Four (4) weeks \n \nPart-time employees earn vacation on a pro-rata basis."
+      },
+      {
+        "page": 29,
+        "excerpt": "ks 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nworking one-half time earns one-half the vacation of a full-time employee. Employees \nmay use their vacation at any time after the first 90 days of employment. Eligibility \nEmployees begin accruing vacation when they first begin work for the Company."
+      },
+      {
+        "page": 31,
+        "excerpt": "You may carry over personal leave from year to year and accumulate a maximum \nof 480 hours of leave for full-time employees and 240 hours for part-time employees. Employer Note: Determining how much leave to provide employees is always a challenge. You are not required to give any specific reason for using your personal/sick time."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "question": "How many vacation days can an employee carry over from one year to the next?",
+    "expected_answer": "A maximum of five days.",
+    "category": "direct",
+    "session_id": "b5c77aa9-3b80-4a84-96b4-fd93750e87cf",
+    "client_total_latency_ms": 4130.53,
+    "api_response": {
+      "question": "How many vacation days can an employee carry over from one year to the next?",
+      "answer": "Employees can carry over a maximum of five (5) vacation days from one year to the next.",
+      "sources": [
+        {
+          "page": 29,
+          "excerpt": "Employees may, \nhowever, carry over a maximum of five (5) days of vacation from one year to the next. For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw oyees may take for religious observance, e.g., Jewish High Holy Days."
+        },
+        {
+          "page": 31,
+          "excerpt": "You may carry over personal leave from year to year and accumulate a maximum \nof 480 hours of leave for full-time employees and 240 hours for part-time employees. Employer Note: Determining how much leave to provide employees is always a challenge. On \nthe one hand, if employees have too much leave, some employees may abuse it."
+        },
+        {
+          "page": 30,
+          "excerpt": "oyees \nthree to four weeks of vacation early on in their job tenure, allowing them to go perhaps as high \nas six weeks if they are with you for many years. In fact, managers may often be able to negotiate \nvariations in vacation time at the time of hire. It is common for managers to earn more \nvacation than non-managerial employees."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 397.1811000010348,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 3016.2292000022717,
+        "llm_time_ms": 664.6633999989717,
+        "total_time_ms": 4126.497799996287
+      }
+    },
+    "answer": "Employees can carry over a maximum of five (5) vacation days from one year to the next.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 397.1811000010348,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 3016.2292000022717,
+      "llm_time_ms": 664.6633999989717,
+      "total_time_ms": 4126.497799996287
+    },
+    "sources": [
+      {
+        "page": 29,
+        "excerpt": "Employees may, \nhowever, carry over a maximum of five (5) days of vacation from one year to the next. For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw oyees may take for religious observance, e.g., Jewish High Holy Days."
+      },
+      {
+        "page": 31,
+        "excerpt": "You may carry over personal leave from year to year and accumulate a maximum \nof 480 hours of leave for full-time employees and 240 hours for part-time employees. Employer Note: Determining how much leave to provide employees is always a challenge. On \nthe one hand, if employees have too much leave, some employees may abuse it."
+      },
+      {
+        "page": 30,
+        "excerpt": "oyees \nthree to four weeks of vacation early on in their job tenure, allowing them to go perhaps as high \nas six weeks if they are with you for many years. In fact, managers may often be able to negotiate \nvariations in vacation time at the time of hire. It is common for managers to earn more \nvacation than non-managerial employees."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "question": "How much vacation does a full-time employee receive after 16 years of employment?",
+    "expected_answer": "Four weeks.",
+    "category": "direct",
+    "session_id": "5fd1ad72-9395-4627-8bc3-4095443e60e3",
+    "client_total_latency_ms": 4167.86,
+    "api_response": {
+      "question": "How much vacation does a full-time employee receive after 16 years of employment?",
+      "answer": "Four (4) weeks of vacation.",
+      "sources": [
+        {
+          "page": 29,
+          "excerpt": "Full-time employees earn vacation time as follows: \n \n 1st year of employment      Two (2) weeks  \n 2nd through 5th year of employment   Twelve (12) days \n 6th through 15th year of employment   Three (3) weeks \n 16th year of employment and following  Four (4) weeks \n \nPart-time employees earn vacation on a pro-rata basis."
+        },
+        {
+          "page": 29,
+          "excerpt": "ks 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nworking one-half time earns one-half the vacation of a full-time employee. Employees \nmay use their vacation at any time after the first 90 days of employment. Eligibility \nEmployees begin accruing vacation when they first begin work for the Company."
+        },
+        {
+          "page": 31,
+          "excerpt": "You may carry over personal leave from year to year and accumulate a maximum \nof 480 hours of leave for full-time employees and 240 hours for part-time employees. Employer Note: Determining how much leave to provide employees is always a challenge. You are not required to give any specific reason for using your personal/sick time."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 501.69719999394147,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2930.9292000034475,
+        "llm_time_ms": 564.070400003402,
+        "total_time_ms": 4162.704299997131
+      }
+    },
+    "answer": "Four (4) weeks of vacation.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 501.69719999394147,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2930.9292000034475,
+      "llm_time_ms": 564.070400003402,
+      "total_time_ms": 4162.704299997131
+    },
+    "sources": [
+      {
+        "page": 29,
+        "excerpt": "Full-time employees earn vacation time as follows: \n \n 1st year of employment      Two (2) weeks  \n 2nd through 5th year of employment   Twelve (12) days \n 6th through 15th year of employment   Three (3) weeks \n 16th year of employment and following  Four (4) weeks \n \nPart-time employees earn vacation on a pro-rata basis."
+      },
+      {
+        "page": 29,
+        "excerpt": "ks 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nworking one-half time earns one-half the vacation of a full-time employee. Employees \nmay use their vacation at any time after the first 90 days of employment. Eligibility \nEmployees begin accruing vacation when they first begin work for the Company."
+      },
+      {
+        "page": 31,
+        "excerpt": "You may carry over personal leave from year to year and accumulate a maximum \nof 480 hours of leave for full-time employees and 240 hours for part-time employees. Employer Note: Determining how much leave to provide employees is always a challenge. You are not required to give any specific reason for using your personal/sick time."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "question": "How much personal leave is accrued each month?",
+    "expected_answer": "Four hours per month.",
+    "category": "direct",
+    "session_id": "afb7f78b-e116-4c3f-bd64-df26c1e0e7c6",
+    "client_total_latency_ms": 4106.04,
+    "api_response": {
+      "question": "How much personal leave is accrued each month?",
+      "answer": "Four (4) hours of personal leave are accrued each month.",
+      "sources": [
+        {
+          "page": 31,
+          "excerpt": "You will accrue four (4) hours of personal leave each month, for a total of six (6) days per twelve \nmonth period. Employer Note: Determining how much leave to provide employees is always a challenge. However, \nwhen you do take personal/sick time you should give your immediate supervisor as much \nadvance notice as possible."
+        },
+        {
+          "page": 32,
+          "excerpt": "Employees may use accrued vacation or personal \nleave for this purpose. 32 \nBereavement Leave \nEmployees will receive up to three (3) days of paid time off in the event of the death of a \nmember of their immediate family. You are allowed one \nday of paid leave in the event of the death of an extended family member."
+        },
+        {
+          "page": 30,
+          "excerpt": "It is common for managers to earn more \nvacation than non-managerial employees. It is wise to address benefits unique to managers \nin a separate manual or in a supplement to this one. Some employers have moved to giving employees a specified number of days annually to use for \nvacation, illness, personal needs, etc."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 677.6298999975552,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2940.368600000511,
+        "llm_time_ms": 422.5618000054965,
+        "total_time_ms": 4090.7072000045446
+      }
+    },
+    "answer": "Four (4) hours of personal leave are accrued each month.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 677.6298999975552,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2940.368600000511,
+      "llm_time_ms": 422.5618000054965,
+      "total_time_ms": 4090.7072000045446
+    },
+    "sources": [
+      {
+        "page": 31,
+        "excerpt": "You will accrue four (4) hours of personal leave each month, for a total of six (6) days per twelve \nmonth period. Employer Note: Determining how much leave to provide employees is always a challenge. However, \nwhen you do take personal/sick time you should give your immediate supervisor as much \nadvance notice as possible."
+      },
+      {
+        "page": 32,
+        "excerpt": "Employees may use accrued vacation or personal \nleave for this purpose. 32 \nBereavement Leave \nEmployees will receive up to three (3) days of paid time off in the event of the death of a \nmember of their immediate family. You are allowed one \nday of paid leave in the event of the death of an extended family member."
+      },
+      {
+        "page": 30,
+        "excerpt": "It is common for managers to earn more \nvacation than non-managerial employees. It is wise to address benefits unique to managers \nin a separate manual or in a supplement to this one. Some employers have moved to giving employees a specified number of days annually to use for \nvacation, illness, personal needs, etc."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What is the maximum accumulated personal leave for a full-time employee?",
+    "expected_answer": "480 hours.",
+    "category": "direct",
+    "session_id": "6bdeafe2-0ff0-4fdb-bd6f-ea116d0201b6",
+    "client_total_latency_ms": 4129.78,
+    "api_response": {
+      "question": "What is the maximum accumulated personal leave for a full-time employee?",
+      "answer": "The maximum accumulated personal leave for a full‑time employee is **480 hours**.",
+      "sources": [
+        {
+          "page": 31,
+          "excerpt": "You may carry over personal leave from year to year and accumulate a maximum \nof 480 hours of leave for full-time employees and 240 hours for part-time employees. You will accrue four (4) hours of personal leave each month, for a total of six (6) days per twelve \nmonth period. Excessive \nabsenteeism creates myriad problems"
+        },
+        {
+          "page": 29,
+          "excerpt": "For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw Vacation \nThe Company recognizes the importance of vacation time in providing rest, recreation and \npersonal enrichment. oyees may take for religious observance, e.g., Jewish High Holy Days."
+        },
+        {
+          "page": 31,
+          "excerpt": "The number, 480 hours is the total leave for a 40 \nhour per week employee for 12 weeks of FMLA. If you have a \nshort term disability plan, then the parameters of the plan may dictate leave accrual. On the other hand, absent a plan, allowing employees to accrue enough leave to be \npaid during FMLA leave has many attributes."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 478.74480000609765,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2956.505999994988,
+        "llm_time_ms": 637.6361000002362,
+        "total_time_ms": 4125.430000000051
+      }
+    },
+    "answer": "The maximum accumulated personal leave for a full‑time employee is **480 hours**.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 478.74480000609765,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2956.505999994988,
+      "llm_time_ms": 637.6361000002362,
+      "total_time_ms": 4125.430000000051
+    },
+    "sources": [
+      {
+        "page": 31,
+        "excerpt": "You may carry over personal leave from year to year and accumulate a maximum \nof 480 hours of leave for full-time employees and 240 hours for part-time employees. You will accrue four (4) hours of personal leave each month, for a total of six (6) days per twelve \nmonth period. Excessive \nabsenteeism creates myriad problems"
+      },
+      {
+        "page": 29,
+        "excerpt": "For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw Vacation \nThe Company recognizes the importance of vacation time in providing rest, recreation and \npersonal enrichment. oyees may take for religious observance, e.g., Jewish High Holy Days."
+      },
+      {
+        "page": 31,
+        "excerpt": "The number, 480 hours is the total leave for a 40 \nhour per week employee for 12 weeks of FMLA. If you have a \nshort term disability plan, then the parameters of the plan may dictate leave accrual. On the other hand, absent a plan, allowing employees to accrue enough leave to be \npaid during FMLA leave has many attributes."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "question": "How often are employees normally paid?",
+    "expected_answer": "Semi-monthly, on or about the 15th and 30th of each month.",
+    "category": "direct",
+    "session_id": "69c47dd3-304d-4e01-b86a-785e48584327",
+    "client_total_latency_ms": 4197.95,
+    "api_response": {
+      "question": "How often are employees normally paid?",
+      "answer": "Employees are paid semi‑monthly, on or about the 15th and the 30th of each month.",
+      "sources": [
+        {
+          "page": 25,
+          "excerpt": "- 25 - \nPart 4 – Compensation \nPayroll Practices \nEmployees are paid semi-monthly, on or about the 15th and the 30th of each month. If the regular payday falls on a Sunday, employees will be paid on \nMonday. When a payroll date falls on a holiday, employees will, when possible, be paid on the \nlast business day before the holiday."
+        },
+        {
+          "page": 9,
+          "excerpt": "3 Under ERISA, employees working 1,000 hours annually or more are entitled to enroll in certain deferred \ncompensation plans. Details of our Equal Employment Opportunity policies are further \nexplained in Part III below. You \nmerely need to pay non-exempt employees overtime if they work more than 40 hours in a week. of all \ndiscriminatory practices."
+        },
+        {
+          "page": 8,
+          "excerpt": "Exempt employees are not subject to the \novertime pay provisions of the Fair Labor Standards Act (FLSA). Non-Exempt Employees \nAll hourly employees are non-exempt employees. Salaried employees who are not \nadministrative, professional, or managerial employees (as defined by the U.S. Department of \nLabor) are likewise not exempt. Full-Time Employee \nFul"
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 488.39500000030966,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2993.393400000059,
+        "llm_time_ms": 642.7734000026248,
+        "total_time_ms": 4181.053699998301
+      }
+    },
+    "answer": "Employees are paid semi‑monthly, on or about the 15th and the 30th of each month.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 488.39500000030966,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2993.393400000059,
+      "llm_time_ms": 642.7734000026248,
+      "total_time_ms": 4181.053699998301
+    },
+    "sources": [
+      {
+        "page": 25,
+        "excerpt": "- 25 - \nPart 4 – Compensation \nPayroll Practices \nEmployees are paid semi-monthly, on or about the 15th and the 30th of each month. If the regular payday falls on a Sunday, employees will be paid on \nMonday. When a payroll date falls on a holiday, employees will, when possible, be paid on the \nlast business day before the holiday."
+      },
+      {
+        "page": 9,
+        "excerpt": "3 Under ERISA, employees working 1,000 hours annually or more are entitled to enroll in certain deferred \ncompensation plans. Details of our Equal Employment Opportunity policies are further \nexplained in Part III below. You \nmerely need to pay non-exempt employees overtime if they work more than 40 hours in a week. of all \ndiscriminatory practices."
+      },
+      {
+        "page": 8,
+        "excerpt": "Exempt employees are not subject to the \novertime pay provisions of the Fair Labor Standards Act (FLSA). Non-Exempt Employees \nAll hourly employees are non-exempt employees. Salaried employees who are not \nadministrative, professional, or managerial employees (as defined by the U.S. Department of \nLabor) are likewise not exempt. Full-Time Employee \nFul"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Can employees have their paycheck deposited directly into their bank account?",
+    "expected_answer": "Yes. Employees may authorize direct deposit by completing the required authorization form.",
+    "category": "direct",
+    "session_id": "4e0ddff3-c7ec-444e-966d-72f27e6ff434",
+    "client_total_latency_ms": 4289.63,
+    "api_response": {
+      "question": "Can employees have their paycheck deposited directly into their bank account?",
+      "answer": "Yes. Employees may have their paycheck deposited directly into their bank account.",
+      "sources": [
+        {
+          "page": 25,
+          "excerpt": "Direct Deposit \nYou may have your paycheck deposited directly into your bank account. Other Deductions \n Other deductions which you authorize, including short-term disability insurance, Flexible \nSpending Account contributions, and 401(k) contributions. ily members or to other contributory benefit programs."
+        },
+        {
+          "page": 25,
+          "excerpt": "- 25 - \nPart 4 – Compensation \nPayroll Practices \nEmployees are paid semi-monthly, on or about the 15th and the 30th of each month. If the regular payday falls on a Sunday, employees will be paid on \nMonday. When a payroll date falls on a holiday, employees will, when possible, be paid on the \nlast business day before the holiday."
+        },
+        {
+          "page": 27,
+          "excerpt": "Advisory Note: Many states have their own continuation of coverage laws which extend \nrequired periods of continuation for terminated employees. Employees ordinarily may \ncontinue their health coverage for 18 months when their employment is terminated. Dental Insurance \nThe Company offers a dental plan for eligible employees."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 491.2646000011591,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2986.7633000030764,
+        "llm_time_ms": 739.3392000012682,
+        "total_time_ms": 4271.677199998521
+      }
+    },
+    "answer": "Yes. Employees may have their paycheck deposited directly into their bank account.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 491.2646000011591,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2986.7633000030764,
+      "llm_time_ms": 739.3392000012682,
+      "total_time_ms": 4271.677199998521
+    },
+    "sources": [
+      {
+        "page": 25,
+        "excerpt": "Direct Deposit \nYou may have your paycheck deposited directly into your bank account. Other Deductions \n Other deductions which you authorize, including short-term disability insurance, Flexible \nSpending Account contributions, and 401(k) contributions. ily members or to other contributory benefit programs."
+      },
+      {
+        "page": 25,
+        "excerpt": "- 25 - \nPart 4 – Compensation \nPayroll Practices \nEmployees are paid semi-monthly, on or about the 15th and the 30th of each month. If the regular payday falls on a Sunday, employees will be paid on \nMonday. When a payroll date falls on a holiday, employees will, when possible, be paid on the \nlast business day before the holiday."
+      },
+      {
+        "page": 27,
+        "excerpt": "Advisory Note: Many states have their own continuation of coverage laws which extend \nrequired periods of continuation for terminated employees. Employees ordinarily may \ncontinue their health coverage for 18 months when their employment is terminated. Dental Insurance \nThe Company offers a dental plan for eligible employees."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "question": "How far in advance should vacation normally be requested?",
+    "expected_answer": "At least two weeks in advance.",
+    "category": "procedure",
+    "session_id": "05beac18-b451-4f1e-831b-feb4817613ce",
+    "client_total_latency_ms": 4299.27,
+    "api_response": {
+      "question": "How far in advance should vacation normally be requested?",
+      "answer": "Not found in PDF",
+      "sources": [
+        {
+          "page": 29,
+          "excerpt": "This leave \nmust be requested through the department manager two weeks prior to the event. 29 \nPart 6 – Holidays, Vacation and Other Leave \nReligious Observance \nFederal and state equal opportunity laws generally require employers to accommodate the \nreligious beliefs of employees, but do not require them to provide paid leave."
+        },
+        {
+          "page": 30,
+          "excerpt": "There is much to be said for giving employees \nthree to four weeks of vacation early on in their job tenure, allowing them to go perhaps as 30 \nrequested. Vacation requests are approved by your immediate supervisor. Vacation requests are granted on a first-come, first-served basis. Vacation Options:  There are innumerable variables regarding vacation."
+        },
+        {
+          "page": 30,
+          "excerpt": "In fact, managers may often be able to negotiate \nvariations in vacation time at the time of hire. oyees \nthree to four weeks of vacation early on in their job tenure, allowing them to go perhaps as high \nas six weeks if they are with you for many years. It is common for managers to earn more \nvacation than non-managerial employees."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 429.8698999991757,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2972.15149999829,
+        "llm_time_ms": 828.8170999949216,
+        "total_time_ms": 4286.262499997974
+      }
+    },
+    "answer": "Not found in PDF",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 429.8698999991757,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2972.15149999829,
+      "llm_time_ms": 828.8170999949216,
+      "total_time_ms": 4286.262499997974
+    },
+    "sources": [
+      {
+        "page": 29,
+        "excerpt": "This leave \nmust be requested through the department manager two weeks prior to the event. 29 \nPart 6 – Holidays, Vacation and Other Leave \nReligious Observance \nFederal and state equal opportunity laws generally require employers to accommodate the \nreligious beliefs of employees, but do not require them to provide paid leave."
+      },
+      {
+        "page": 30,
+        "excerpt": "There is much to be said for giving employees \nthree to four weeks of vacation early on in their job tenure, allowing them to go perhaps as 30 \nrequested. Vacation requests are approved by your immediate supervisor. Vacation requests are granted on a first-come, first-served basis. Vacation Options:  There are innumerable variables regarding vacation."
+      },
+      {
+        "page": 30,
+        "excerpt": "In fact, managers may often be able to negotiate \nvariations in vacation time at the time of hire. oyees \nthree to four weeks of vacation early on in their job tenure, allowing them to go perhaps as high \nas six weeks if they are with you for many years. It is common for managers to earn more \nvacation than non-managerial employees."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Who approves vacation requests?",
+    "expected_answer": "The employee's immediate supervisor.",
+    "category": "procedure",
+    "session_id": "cd3e8c63-a76c-44b3-aeed-b8f7c2ed3ba9",
+    "client_total_latency_ms": 3899.43,
+    "api_response": {
+      "question": "Who approves vacation requests?",
+      "answer": "Vacation requests are approved by your immediate supervisor.",
+      "sources": [
+        {
+          "page": 30,
+          "excerpt": "Vacation requests are approved by your immediate supervisor. Vacation requests are granted on a first-come, first-served basis. In the event of a conflict in \nvacation requests, your supervisor will consider the Company’s staffing needs during the relative \nperiod, as well as the length of service with the Company of the employees involved."
+        },
+        {
+          "page": 29,
+          "excerpt": "Employees who require additional time off may use vacation and /or personal days. 29 \nPart 6 – Holidays, Vacation and Other Leave \nReligious Observance \nFederal and state equal opportunity laws generally require employers to accommodate the \nreligious beliefs of employees, but do not require them to provide paid leave. Vacation \nThe Company recogni"
+        },
+        {
+          "page": 33,
+          "excerpt": "Employees will be permitted to use accrued vacation time when appearing as witnesses. The Company, therefore, requests that \nemployees schedule their voting for before or after their work shift. An employee who expects a \nconflict, however, should notify his or her supervisor, in advance, so that schedules can be \nadjusted if necessary uirements."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 458.91009999468224,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2951.5612999966834,
+        "llm_time_ms": 407.80090000043856,
+        "total_time_ms": 3883.402899999055
+      }
+    },
+    "answer": "Vacation requests are approved by your immediate supervisor.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 458.91009999468224,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2951.5612999966834,
+      "llm_time_ms": 407.80090000043856,
+      "total_time_ms": 3883.402899999055
+    },
+    "sources": [
+      {
+        "page": 30,
+        "excerpt": "Vacation requests are approved by your immediate supervisor. Vacation requests are granted on a first-come, first-served basis. In the event of a conflict in \nvacation requests, your supervisor will consider the Company’s staffing needs during the relative \nperiod, as well as the length of service with the Company of the employees involved."
+      },
+      {
+        "page": 29,
+        "excerpt": "Employees who require additional time off may use vacation and /or personal days. 29 \nPart 6 – Holidays, Vacation and Other Leave \nReligious Observance \nFederal and state equal opportunity laws generally require employers to accommodate the \nreligious beliefs of employees, but do not require them to provide paid leave. Vacation \nThe Company recogni"
+      },
+      {
+        "page": 33,
+        "excerpt": "Employees will be permitted to use accrued vacation time when appearing as witnesses. The Company, therefore, requests that \nemployees schedule their voting for before or after their work shift. An employee who expects a \nconflict, however, should notify his or her supervisor, in advance, so that schedules can be \nadjusted if necessary uirements."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "question": "How are vacation requests handled when multiple employees request the same period?",
+    "expected_answer": "They are generally granted first-come, first-served. In conflicts, staffing needs and length of service are considered.",
+    "category": "procedure",
+    "session_id": "f124f6e8-4239-499f-a8c1-8f4a830a4074",
+    "client_total_latency_ms": 4418.95,
+    "api_response": {
+      "question": "How are vacation requests handled when multiple employees request the same period?",
+      "answer": "Vacation requests are approved by the employee’s immediate supervisor. They are granted on a first‑come, first‑served basis. If multiple employees request the same period, the supervisor resolves the conflict by considering the company’s staffing needs for that time and the relative length of service of the employees involved.",
+      "sources": [
+        {
+          "page": 30,
+          "excerpt": "In the event of a conflict in \nvacation requests, your supervisor will consider the Company’s staffing needs during the relative \nperiod, as well as the length of service with the Company of the employees involved. Vacation requests are approved by your immediate supervisor. Vacation requests are granted on a first-come, first-served basis."
+        },
+        {
+          "page": 29,
+          "excerpt": "Eligibility \nEmployees begin accruing vacation when they first begin work for the Company. Procedure \nRequests for vacation time should be submitted to your supervisor as soon as you know when \nyou wish to schedule your vacation, but in no event less than two weeks prior to the time The deduction will be made from the employee’s last check."
+        },
+        {
+          "page": 29,
+          "excerpt": "29 \nPart 6 – Holidays, Vacation and Other Leave \nReligious Observance \nFederal and state equal opportunity laws generally require employers to accommodate the \nreligious beliefs of employees, but do not require them to provide paid leave. Employees who require additional time off may use vacation and /or personal days. Vacation \nThe Company recogni"
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 418.9447999960976,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 3035.619400005089,
+        "llm_time_ms": 900.9899000011501,
+        "total_time_ms": 4406.252799999493
+      }
+    },
+    "answer": "Vacation requests are approved by the employee’s immediate supervisor. They are granted on a first‑come, first‑served basis. If multiple employees request the same period, the supervisor resolves the conflict by considering the company’s staffing needs for that time and the relative length of service of the employees involved.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 418.9447999960976,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 3035.619400005089,
+      "llm_time_ms": 900.9899000011501,
+      "total_time_ms": 4406.252799999493
+    },
+    "sources": [
+      {
+        "page": 30,
+        "excerpt": "In the event of a conflict in \nvacation requests, your supervisor will consider the Company’s staffing needs during the relative \nperiod, as well as the length of service with the Company of the employees involved. Vacation requests are approved by your immediate supervisor. Vacation requests are granted on a first-come, first-served basis."
+      },
+      {
+        "page": 29,
+        "excerpt": "Eligibility \nEmployees begin accruing vacation when they first begin work for the Company. Procedure \nRequests for vacation time should be submitted to your supervisor as soon as you know when \nyou wish to schedule your vacation, but in no event less than two weeks prior to the time The deduction will be made from the employee’s last check."
+      },
+      {
+        "page": 29,
+        "excerpt": "29 \nPart 6 – Holidays, Vacation and Other Leave \nReligious Observance \nFederal and state equal opportunity laws generally require employers to accommodate the \nreligious beliefs of employees, but do not require them to provide paid leave. Employees who require additional time off may use vacation and /or personal days. Vacation \nThe Company recogni"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "question": "What should an employee do if they will unexpectedly be late or absent?",
+    "expected_answer": "They must personally notify their immediate supervisor or manager as soon as they know. A voicemail or message with another staff member does not qualify.",
+    "category": "procedure",
+    "session_id": "d44cd501-4ae5-4008-9c95-29da7539ad9d",
+    "client_total_latency_ms": 4483.2,
+    "api_response": {
+      "question": "What should an employee do if they will unexpectedly be late or absent?",
+      "answer": "If an employee will be late or absent unexpectedly, they must personally notify their immediate supervisor (or a manager) as soon as they become aware—ideally no later than one hour before their scheduled start time—and must speak directly with the supervisor rather than leaving a voicemail or message with another staff member.",
+      "sources": [
+        {
+          "page": 12,
+          "excerpt": "Whenever you know in advance that you \nare going to be absent, you should notify your immediate supervisor or the designated manager. The \nCompany recognizes that illness or other circumstances beyond your control may cause you to \nbe absent from work from time to time. If you must leave a \nmessage on voicemail, you must provide a number wh"
+        },
+        {
+          "page": 31,
+          "excerpt": "if your absence has not been previously scheduled, you must \npersonally notify your immediate supervisor or manager as soon as you are aware that you will \nbe late or unable to report to work. Leaving a voicemail, or a message with another staff \nmember, does not qualify as notifying your supervisor – you must personally speak with him or \nher."
+        },
+        {
+          "page": 13,
+          "excerpt": "When severe weather develops or is anticipated to develop during the day and a decision is made \nby Management to close before 5:30 p.m., you will be compensated as if you had worked to the \nend of your regularly scheduled hours for that day. Employer Note:  Generally exempt employees must be paid if they work at all during the day."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 434.94579999969574,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2963.6945000020205,
+        "llm_time_ms": 1012.331500001892,
+        "total_time_ms": 4464.8821000009775
+      }
+    },
+    "answer": "If an employee will be late or absent unexpectedly, they must personally notify their immediate supervisor (or a manager) as soon as they become aware—ideally no later than one hour before their scheduled start time—and must speak directly with the supervisor rather than leaving a voicemail or message with another staff member.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 434.94579999969574,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2963.6945000020205,
+      "llm_time_ms": 1012.331500001892,
+      "total_time_ms": 4464.8821000009775
+    },
+    "sources": [
+      {
+        "page": 12,
+        "excerpt": "Whenever you know in advance that you \nare going to be absent, you should notify your immediate supervisor or the designated manager. The \nCompany recognizes that illness or other circumstances beyond your control may cause you to \nbe absent from work from time to time. If you must leave a \nmessage on voicemail, you must provide a number wh"
+      },
+      {
+        "page": 31,
+        "excerpt": "if your absence has not been previously scheduled, you must \npersonally notify your immediate supervisor or manager as soon as you are aware that you will \nbe late or unable to report to work. Leaving a voicemail, or a message with another staff \nmember, does not qualify as notifying your supervisor – you must personally speak with him or \nher."
+      },
+      {
+        "page": 13,
+        "excerpt": "When severe weather develops or is anticipated to develop during the day and a decision is made \nby Management to close before 5:30 p.m., you will be compensated as if you had worked to the \nend of your regularly scheduled hours for that day. Employer Note:  Generally exempt employees must be paid if they work at all during the day."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "question": "How many days of paid leave are provided for the death of an immediate family member?",
+    "expected_answer": "Up to three days of paid time off.",
+    "category": "policy",
+    "session_id": "2d34e164-6310-42ce-b22f-807a4a57d281",
+    "client_total_latency_ms": 4130.81,
+    "api_response": {
+      "question": "How many days of paid leave are provided for the death of an immediate family member?",
+      "answer": "Three (3) days of paid leave.",
+      "sources": [
+        {
+          "page": 32,
+          "excerpt": "32 \nBereavement Leave \nEmployees will receive up to three (3) days of paid time off in the event of the death of a \nmember of their immediate family. You are allowed one \nday of paid leave in the event of the death of an extended family member. Family and Medical Leave \nThe federal Family Medical Leave Act allows employees to take up to 12"
+        },
+        {
+          "page": 32,
+          "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+        },
+        {
+          "page": 31,
+          "excerpt": "31 \nPersonal Leave \nPersonal Leave may be used for the following: \n \n Medical and dental appointments for yourself or family members;  \n Your personal illness or that of a member of your family \n Personal business that cannot be tended to outside of work hours, e.g., a house closing. Excessive \nabsenteeism creates myriad problems"
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 447.30649999837624,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2984.8142999981064,
+        "llm_time_ms": 627.5814000036917,
+        "total_time_ms": 4114.117799996166
+      }
+    },
+    "answer": "Three (3) days of paid leave.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 447.30649999837624,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2984.8142999981064,
+      "llm_time_ms": 627.5814000036917,
+      "total_time_ms": 4114.117799996166
+    },
+    "sources": [
+      {
+        "page": 32,
+        "excerpt": "32 \nBereavement Leave \nEmployees will receive up to three (3) days of paid time off in the event of the death of a \nmember of their immediate family. You are allowed one \nday of paid leave in the event of the death of an extended family member. Family and Medical Leave \nThe federal Family Medical Leave Act allows employees to take up to 12"
+      },
+      {
+        "page": 32,
+        "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+      },
+      {
+        "page": 31,
+        "excerpt": "31 \nPersonal Leave \nPersonal Leave may be used for the following: \n \n Medical and dental appointments for yourself or family members;  \n Your personal illness or that of a member of your family \n Personal business that cannot be tended to outside of work hours, e.g., a house closing. Excessive \nabsenteeism creates myriad problems"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "question": "How much bereavement leave is provided for an extended family member?",
+    "expected_answer": "One day of paid leave.",
+    "category": "policy",
+    "session_id": "5886d770-ca39-4834-a87b-fb47527a6a4b",
+    "client_total_latency_ms": 5967.12,
+    "api_response": {
+      "question": "How much bereavement leave is provided for an extended family member?",
+      "answer": "One day of paid leave.",
+      "sources": [
+        {
+          "page": 32,
+          "excerpt": "You are allowed one \nday of paid leave in the event of the death of an extended family member. 32 \nBereavement Leave \nEmployees will receive up to three (3) days of paid time off in the event of the death of a \nmember of their immediate family. Extended family \nincludes grandparents, aunts and uncles, and other more distant relatives."
+        },
+        {
+          "page": 32,
+          "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+        },
+        {
+          "page": 5,
+          "excerpt": "31 \nBereavement Leave ................................................................................................................... 32 \nFamily and Medical Leave ........................................................................................................ ................................ 33 \nJury Duty ..."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 461.14400000078604,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2884.5528999954695,
+        "llm_time_ms": 2549.873199997819,
+        "total_time_ms": 5948.276900002384
+      }
+    },
+    "answer": "One day of paid leave.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 461.14400000078604,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2884.5528999954695,
+      "llm_time_ms": 2549.873199997819,
+      "total_time_ms": 5948.276900002384
+    },
+    "sources": [
+      {
+        "page": 32,
+        "excerpt": "You are allowed one \nday of paid leave in the event of the death of an extended family member. 32 \nBereavement Leave \nEmployees will receive up to three (3) days of paid time off in the event of the death of a \nmember of their immediate family. Extended family \nincludes grandparents, aunts and uncles, and other more distant relatives."
+      },
+      {
+        "page": 32,
+        "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+      },
+      {
+        "page": 5,
+        "excerpt": "31 \nBereavement Leave ................................................................................................................... 32 \nFamily and Medical Leave ........................................................................................................ ................................ 33 \nJury Duty ..."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "question": "How much notice is generally required for military caregiver leave?",
+    "expected_answer": "Generally, at least 30 days' notice before the leave begins.",
+    "category": "policy",
+    "session_id": "594614c5-1bfa-41c9-ba72-5c5b48999ff8",
+    "client_total_latency_ms": 7303.3,
+    "api_response": {
+      "question": "How much notice is generally required for military caregiver leave?",
+      "answer": "At least 30 days’ notice.",
+      "sources": [
+        {
+          "page": 32,
+          "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+        },
+        {
+          "page": 5,
+          "excerpt": "32 \nMilitary Caregiver Leave .......................................................................................................... 32 \nMilitary Service Leave .............................................................................................................. ................................ 33 \nJury Duty ..."
+        },
+        {
+          "page": 32,
+          "excerpt": "Military Caregiver Leave \nThe federal Family Medical Leave Act, as amended in 2008 and 2010, Family and Medical Leave \nThe federal Family Medical Leave Act allows employees to take up to 12 weeks per year for the \nserious health condition of the employee or a family member or for childbirth or adoption. ."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 483.144000005268,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2970.997600001283,
+        "llm_time_ms": 3766.067700002168,
+        "total_time_ms": 7283.818700001575
+      }
+    },
+    "answer": "At least 30 days’ notice.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 483.144000005268,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2970.997600001283,
+      "llm_time_ms": 3766.067700002168,
+      "total_time_ms": 7283.818700001575
+    },
+    "sources": [
+      {
+        "page": 32,
+        "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+      },
+      {
+        "page": 5,
+        "excerpt": "32 \nMilitary Caregiver Leave .......................................................................................................... 32 \nMilitary Service Leave .............................................................................................................. ................................ 33 \nJury Duty ..."
+      },
+      {
+        "page": 32,
+        "excerpt": "Military Caregiver Leave \nThe federal Family Medical Leave Act, as amended in 2008 and 2010, Family and Medical Leave \nThe federal Family Medical Leave Act allows employees to take up to 12 weeks per year for the \nserious health condition of the employee or a family member or for childbirth or adoption. ."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "question": "How much FMLA leave can an employee take for their own serious health condition or that of a family member?",
+    "expected_answer": "Up to 12 weeks per year.",
+    "category": "policy",
+    "session_id": "17ec6ded-b98e-4450-b8f1-4d3e22574188",
+    "client_total_latency_ms": 8154.74,
+    "api_response": {
+      "question": "How much FMLA leave can an employee take for their own serious health condition or that of a family member?",
+      "answer": "Up to 12 weeks per year.",
+      "sources": [
+        {
+          "page": 32,
+          "excerpt": "Family and Medical Leave \nThe federal Family Medical Leave Act allows employees to take up to 12 weeks per year for the \nserious health condition of the employee or a family member or for childbirth or adoption. Any paid leave that you take is counted as part of \nyour FMLA leave. Under a recent interpretation of the FMLA by the U.S. ."
+        },
+        {
+          "page": 32,
+          "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+        },
+        {
+          "page": 31,
+          "excerpt": "31 \nPersonal Leave \nPersonal Leave may be used for the following: \n \n Medical and dental appointments for yourself or family members;  \n Your personal illness or that of a member of your family \n Personal business that cannot be tended to outside of work hours, e.g., a house closing. Excessive \nabsenteeism creates myriad problems"
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 443.8217000060831,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2942.803999998432,
+        "llm_time_ms": 4698.0218999960925,
+        "total_time_ms": 8135.863100003917
+      }
+    },
+    "answer": "Up to 12 weeks per year.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 443.8217000060831,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2942.803999998432,
+      "llm_time_ms": 4698.0218999960925,
+      "total_time_ms": 8135.863100003917
+    },
+    "sources": [
+      {
+        "page": 32,
+        "excerpt": "Family and Medical Leave \nThe federal Family Medical Leave Act allows employees to take up to 12 weeks per year for the \nserious health condition of the employee or a family member or for childbirth or adoption. Any paid leave that you take is counted as part of \nyour FMLA leave. Under a recent interpretation of the FMLA by the U.S. ."
+      },
+      {
+        "page": 32,
+        "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+      },
+      {
+        "page": 31,
+        "excerpt": "31 \nPersonal Leave \nPersonal Leave may be used for the following: \n \n Medical and dental appointments for yourself or family members;  \n Your personal illness or that of a member of your family \n Personal business that cannot be tended to outside of work hours, e.g., a house closing. Excessive \nabsenteeism creates myriad problems"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "question": "How much military caregiver leave may an eligible employee receive?",
+    "expected_answer": "Up to 26 weeks of unpaid leave within a 12-month period, subject to the overall 26-week FMLA limit described in the handbook.",
+    "category": "policy",
+    "session_id": "f47bc9c1-0951-4084-b821-9cad1e87565f",
+    "client_total_latency_ms": 7350.48,
+    "api_response": {
+      "question": "How much military caregiver leave may an eligible employee receive?",
+      "answer": "An eligible employee may receive up to 26 weeks of unpaid military caregiver leave within a twelve‑month period.",
+      "sources": [
+        {
+          "page": 32,
+          "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+        },
+        {
+          "page": 32,
+          "excerpt": "Department of Labor, an employee who \nassumes the role of caring for a child receives parental rights to family leave, regardless of the \nlegal or biological relationship. Military Caregiver Leave \nThe federal Family Medical Leave Act, as amended in 2008 and 2010, Any paid leave that you take is counted as part of \nyour FMLA leave. ."
+        },
+        {
+          "page": 5,
+          "excerpt": "32 \nMilitary Caregiver Leave .......................................................................................................... 32 \nMilitary Service Leave .............................................................................................................. ................................ 33 \nJury Duty ..."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 425.881200004369,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 3041.555399999197,
+        "llm_time_ms": 3810.702399998263,
+        "total_time_ms": 7333.073699999659
+      }
+    },
+    "answer": "An eligible employee may receive up to 26 weeks of unpaid military caregiver leave within a twelve‑month period.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 425.881200004369,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 3041.555399999197,
+      "llm_time_ms": 3810.702399998263,
+      "total_time_ms": 7333.073699999659
+    },
+    "sources": [
+      {
+        "page": 32,
+        "excerpt": "(For example, if you \ntake six weeks of FMLA leave for your own illness or that of a family member, you may take no \nmore than 20 weeks to care for an ill or injured service member.)  Generally, you must give the \nCompany at least 30 days notice before the commencement of any military caregiver leave. eave."
+      },
+      {
+        "page": 32,
+        "excerpt": "Department of Labor, an employee who \nassumes the role of caring for a child receives parental rights to family leave, regardless of the \nlegal or biological relationship. Military Caregiver Leave \nThe federal Family Medical Leave Act, as amended in 2008 and 2010, Any paid leave that you take is counted as part of \nyour FMLA leave. ."
+      },
+      {
+        "page": 5,
+        "excerpt": "32 \nMilitary Caregiver Leave .......................................................................................................... 32 \nMilitary Service Leave .............................................................................................................. ................................ 33 \nJury Duty ..."
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "question": "What happens if an employee takes more vacation than they have accrued and then leaves the company?",
+    "expected_answer": "They must pay back the vacation time taken but not earned, with the deduction made from their last check.",
+    "category": "policy",
+    "session_id": "4f302b90-9e95-4d49-a675-e3d72b54a6e2",
+    "client_total_latency_ms": 11910.43,
+    "api_response": {
+      "question": "What happens if an employee takes more vacation than they have accrued and then leaves the company?",
+      "answer": "If an employee has taken more vacation than they have accrued, the excess amount is deducted from the employee’s final paycheck when they leave the company.",
+      "sources": [
+        {
+          "page": 29,
+          "excerpt": "If an employee leaves the Company but has taken more vacation time than he or she \nhas accrued, then the employee will be obligated to pay back to the Company any vacation time \ntaken but not earned. However, if an \nemployee leaves the Company, vacation will be calculated on a pro-rata basis for the time \nworked."
+        },
+        {
+          "page": 34,
+          "excerpt": "If, however, you have used \npersonal time or vacation time in excess of the time actually accrued, this overpayment will be \ndeducted from your final check(s). The Company asks all employees to participate in an exit interview with their immediate \nsupervisor prior to leaving the company."
+        },
+        {
+          "page": 34,
+          "excerpt": "zation trained and \nexperienced in employment disputes.20    If mediation is not successful, both the Company and \nthe employee agree to submit their dispute to arbitration. For example, the employer may \nprovide that if an employee fails to give proper notice, the employee will not be paid for ac crued vacation days. Any \ndecisi"
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 430.8586000042851,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 10720.273799997813,
+        "llm_time_ms": 687.6811000038288,
+        "total_time_ms": 11891.492000002472
+      }
+    },
+    "answer": "If an employee has taken more vacation than they have accrued, the excess amount is deducted from the employee’s final paycheck when they leave the company.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 430.8586000042851,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 10720.273799997813,
+      "llm_time_ms": 687.6811000038288,
+      "total_time_ms": 11891.492000002472
+    },
+    "sources": [
+      {
+        "page": 29,
+        "excerpt": "If an employee leaves the Company but has taken more vacation time than he or she \nhas accrued, then the employee will be obligated to pay back to the Company any vacation time \ntaken but not earned. However, if an \nemployee leaves the Company, vacation will be calculated on a pro-rata basis for the time \nworked."
+      },
+      {
+        "page": 34,
+        "excerpt": "If, however, you have used \npersonal time or vacation time in excess of the time actually accrued, this overpayment will be \ndeducted from your final check(s). The Company asks all employees to participate in an exit interview with their immediate \nsupervisor prior to leaving the company."
+      },
+      {
+        "page": 34,
+        "excerpt": "zation trained and \nexperienced in employment disputes.20    If mediation is not successful, both the Company and \nthe employee agree to submit their dispute to arbitration. For example, the employer may \nprovide that if an employee fails to give proper notice, the employee will not be paid for ac crued vacation days. Any \ndecisi"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "question": "I'm a part-time employee working 30 hours per week. How does my vacation entitlement compare with a full-time employee's?",
+    "expected_answer": "Vacation is earned pro-rata. An employee working 30 hours per week earns three-quarters of the vacation amount of a full-time employee.",
+    "category": "multi_hop",
+    "session_id": "ab4da82a-2fec-4775-8e9d-11e8282a689a",
+    "client_total_latency_ms": 10926.33,
+    "api_response": {
+      "question": "I'm a part-time employee working 30 hours per week. How does my vacation entitlement compare with a full-time employee's?",
+      "answer": "A part‑time employee working 30 hours per week earns ¾ (three‑quarters) of the vacation time that a full‑time employee receives.",
+      "sources": [
+        {
+          "page": 29,
+          "excerpt": "ks 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nworking one-half time earns one-half the vacation of a full-time employee. However, if an \nemployee leaves the Company, vacation will be calculated on a pro-rata basis for the time \nworked. The deduction will be made from the employee’s last check."
+        },
+        {
+          "page": 29,
+          "excerpt": "For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw Because the Company \nbelieves it is in the best interest of both the Company and our employees that employees take \nvacation time each year, the Company does not grant pay in lieu of time off."
+        },
+        {
+          "page": 9,
+          "excerpt": "- 9 - \nPart-Time Employee \nPart-time employees are those who are regularly scheduled to work at least 20 but fewer than 40 \nhours per week. Part-time employees are not eligible for Company paid benefits, with the \nexception of the 401(k) plan. Casual Employee \nEmployees who work on an occasional or as needed basis."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 398.10090000537457,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 9928.7891999993,
+        "llm_time_ms": 533.8450999988709,
+        "total_time_ms": 10913.544700000784
+      }
+    },
+    "answer": "A part‑time employee working 30 hours per week earns ¾ (three‑quarters) of the vacation time that a full‑time employee receives.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 398.10090000537457,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 9928.7891999993,
+      "llm_time_ms": 533.8450999988709,
+      "total_time_ms": 10913.544700000784
+    },
+    "sources": [
+      {
+        "page": 29,
+        "excerpt": "ks 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nworking one-half time earns one-half the vacation of a full-time employee. However, if an \nemployee leaves the Company, vacation will be calculated on a pro-rata basis for the time \nworked. The deduction will be made from the employee’s last check."
+      },
+      {
+        "page": 29,
+        "excerpt": "For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw Because the Company \nbelieves it is in the best interest of both the Company and our employees that employees take \nvacation time each year, the Company does not grant pay in lieu of time off."
+      },
+      {
+        "page": 9,
+        "excerpt": "- 9 - \nPart-Time Employee \nPart-time employees are those who are regularly scheduled to work at least 20 but fewer than 40 \nhours per week. Part-time employees are not eligible for Company paid benefits, with the \nexception of the 401(k) plan. Casual Employee \nEmployees who work on an occasional or as needed basis."
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "question": "If I declined my insurance when I was first eligible, when can I apply again?",
+    "expected_answer": "Generally during Open Enrollment; Special Enrollment may also apply if there is a qualifying life event.",
+    "category": "multi_hop",
+    "session_id": "72c5d650-cd99-4996-a493-578bbfe8c40e",
+    "client_total_latency_ms": 4327.76,
+    "api_response": {
+      "question": "If I declined my insurance when I was first eligible, when can I apply again?",
+      "answer": "You can apply for coverage during the next Open Enrollment period (or during a Special Enrollment period if you experience a qualifying life‑event).",
+      "sources": [
+        {
+          "page": 26,
+          "excerpt": "Waiting Period \nFull-time employees are eligible to participate in the various insurance programs offered by the \nCompany on their first day of employment. If you decline to participate in these programs on your initial eligibility date, you may \nrequest entry into the pla ance carrier or health maintenance organization (HMO)."
+        },
+        {
+          "page": 27,
+          "excerpt": "Applications for Medical, Dental, STD, LTD and Supplemental Life Insurance may be submitted \nduring this period. - 27 - \nOpen Enrollment \nThe open enrollment period allows employees to add or change their benefits coverage. For specific details \nregarding Special Enrollment please refer your Summary Plan Description."
+        },
+        {
+          "page": 26,
+          "excerpt": "If you waive \nparticipation in any of those programs for either yourself or your eligible dependents, you will \nonly be allowed to apply for entry into the various Plans during Open Enrollment. 16 The details of benefits can be attached to this handbook as Appendices or set out in a separate booklet."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 413.8281000050483,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2935.9490999995614,
+        "llm_time_ms": 908.8437000027625,
+        "total_time_ms": 4312.975300003018
+      }
+    },
+    "answer": "You can apply for coverage during the next Open Enrollment period (or during a Special Enrollment period if you experience a qualifying life‑event).",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 413.8281000050483,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2935.9490999995614,
+      "llm_time_ms": 908.8437000027625,
+      "total_time_ms": 4312.975300003018
+    },
+    "sources": [
+      {
+        "page": 26,
+        "excerpt": "Waiting Period \nFull-time employees are eligible to participate in the various insurance programs offered by the \nCompany on their first day of employment. If you decline to participate in these programs on your initial eligibility date, you may \nrequest entry into the pla ance carrier or health maintenance organization (HMO)."
+      },
+      {
+        "page": 27,
+        "excerpt": "Applications for Medical, Dental, STD, LTD and Supplemental Life Insurance may be submitted \nduring this period. - 27 - \nOpen Enrollment \nThe open enrollment period allows employees to add or change their benefits coverage. For specific details \nregarding Special Enrollment please refer your Summary Plan Description."
+      },
+      {
+        "page": 26,
+        "excerpt": "If you waive \nparticipation in any of those programs for either yourself or your eligible dependents, you will \nonly be allowed to apply for entry into the various Plans during Open Enrollment. 16 The details of benefits can be attached to this handbook as Appendices or set out in a separate booklet."
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "question": "If I get married, can I enroll in the company's benefit plans outside Open Enrollment?",
+    "expected_answer": "Yes. Marriage is a qualifying event for Special Enrollment, subject to the handbook's applicable enrollment requirements and deadline.",
+    "category": "multi_hop",
+    "session_id": "8da4e746-ea9f-4d91-a603-28c73797d959",
+    "client_total_latency_ms": 5942.44,
+    "api_response": {
+      "question": "If I get married, can I enroll in the company's benefit plans outside Open Enrollment?",
+      "answer": "Yes. Marriage is a qualifying life‑status change that triggers a Special Enrollment period, allowing you to enroll in the plans outside Open Enrollment as long as you apply within 30 days of the event.",
+      "sources": [
+        {
+          "page": 26,
+          "excerpt": "If you waive \nparticipation in any of those programs for either yourself or your eligible dependents, you will \nonly be allowed to apply for entry into the various Plans during Open Enrollment. Employee Contributions \nThe Company’s benefit package is contributory; that is, you are responsible for a portion of the \npremium for your benefits."
+        },
+        {
+          "page": 27,
+          "excerpt": "Once you have made a \nchange, you cannot change that selection until the next Open Enrollment period (except in the \ncase of a major life status change; see Special Enrollment). - 27 - \nOpen Enrollment \nThe open enrollment period allows employees to add or change their benefits coverage. Continuation of Coverage \nFederal law requires employers of"
+        },
+        {
+          "page": 26,
+          "excerpt": "Details regarding each benefit plan are contained in the Company’s \nBenefit Booklet.16    Benefit plans governed by the federal Employee Retirement Income \nSecurity Act (ERISA) may be further described in formal summary plan descriptions or other \nlegal documents available for your review in the Human Resources Department."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 427.4370999992243,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 4670.316700001422,
+        "llm_time_ms": 777.6837000055821,
+        "total_time_ms": 5928.783700001077
+      }
+    },
+    "answer": "Yes. Marriage is a qualifying life‑status change that triggers a Special Enrollment period, allowing you to enroll in the plans outside Open Enrollment as long as you apply within 30 days of the event.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 427.4370999992243,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 4670.316700001422,
+      "llm_time_ms": 777.6837000055821,
+      "total_time_ms": 5928.783700001077
+    },
+    "sources": [
+      {
+        "page": 26,
+        "excerpt": "If you waive \nparticipation in any of those programs for either yourself or your eligible dependents, you will \nonly be allowed to apply for entry into the various Plans during Open Enrollment. Employee Contributions \nThe Company’s benefit package is contributory; that is, you are responsible for a portion of the \npremium for your benefits."
+      },
+      {
+        "page": 27,
+        "excerpt": "Once you have made a \nchange, you cannot change that selection until the next Open Enrollment period (except in the \ncase of a major life status change; see Special Enrollment). - 27 - \nOpen Enrollment \nThe open enrollment period allows employees to add or change their benefits coverage. Continuation of Coverage \nFederal law requires employers of"
+      },
+      {
+        "page": 26,
+        "excerpt": "Details regarding each benefit plan are contained in the Company’s \nBenefit Booklet.16    Benefit plans governed by the federal Employee Retirement Income \nSecurity Act (ERISA) may be further described in formal summary plan descriptions or other \nlegal documents available for your review in the Human Resources Department."
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "question": "If I'm injured at work, who must I notify and why?",
+    "expected_answer": "Immediately notify the Manager and Human Resources so the company can help obtain appropriate medical treatment. Failure to follow the procedure may delay workers' compensation benefits.",
+    "category": "multi_hop",
+    "session_id": "c7ff7ac6-7a90-4fb7-a454-518f42bcd1c6",
+    "client_total_latency_ms": 12707.82,
+    "api_response": {
+      "question": "If I'm injured at work, who must I notify and why?",
+      "answer": "You must notify your manager **and** the Human Resources Department immediately. Doing so allows the Company to arrange appropriate medical treatment and ensures a workers‑compensation report is filed promptly, preventing delays or loss of benefits.",
+      "sources": [
+        {
+          "page": 28,
+          "excerpt": "If you are injured or become ill on the \njob, you must immediately report the injury or illness to your Manager and the Human Resources \nDepartment. However, all \nmedical expenses incurred in connection with an on-the-job injury or illness and partial salary \npayments are paid in accordance with applicable state law. ture of your injury or illness."
+        },
+        {
+          "page": 18,
+          "excerpt": "Medical Procedures \nIf you become ill or get hurt while at work, you must notify your manager immediately. you have a duty to comply with the safety rules of the Company, and you are \nexpected to take an active part in maintaining this hazard-free environment. Your workplace should be kept neat, clean and orderly."
+        },
+        {
+          "page": 17,
+          "excerpt": "9 If your company is subject to the federal Drug Free Workplace Act, add the following statement here:    “Any \nemployee who is convicted of any violation occurring on Company property or during working times, shall notify \nHuman Resources within u to behave responsibly and appropriately at all times."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 431.4594000024954,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 11240.168000003905,
+        "llm_time_ms": 960.5668000003789,
+        "total_time_ms": 12685.548200002813
+      }
+    },
+    "answer": "You must notify your manager **and** the Human Resources Department immediately. Doing so allows the Company to arrange appropriate medical treatment and ensures a workers‑compensation report is filed promptly, preventing delays or loss of benefits.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 431.4594000024954,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 11240.168000003905,
+      "llm_time_ms": 960.5668000003789,
+      "total_time_ms": 12685.548200002813
+    },
+    "sources": [
+      {
+        "page": 28,
+        "excerpt": "If you are injured or become ill on the \njob, you must immediately report the injury or illness to your Manager and the Human Resources \nDepartment. However, all \nmedical expenses incurred in connection with an on-the-job injury or illness and partial salary \npayments are paid in accordance with applicable state law. ture of your injury or illness."
+      },
+      {
+        "page": 18,
+        "excerpt": "Medical Procedures \nIf you become ill or get hurt while at work, you must notify your manager immediately. you have a duty to comply with the safety rules of the Company, and you are \nexpected to take an active part in maintaining this hazard-free environment. Your workplace should be kept neat, clean and orderly."
+      },
+      {
+        "page": 17,
+        "excerpt": "9 If your company is subject to the federal Drug Free Workplace Act, add the following statement here:    “Any \nemployee who is convicted of any violation occurring on Company property or during working times, shall notify \nHuman Resources within u to behave responsibly and appropriately at all times."
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Can I work from home three days a week?",
+    "expected_answer": "The handbook permits telecommuting up to three days per week with supervisor approval, and not all jobs are suitable for telecommuting.",
+    "category": "multi_hop",
+    "session_id": "03ea7cef-6154-4fe2-bb0a-a2269da7b54a",
+    "client_total_latency_ms": 4184.94,
+    "api_response": {
+      "question": "Can I work from home three days a week?",
+      "answer": "Yes. You may telecommute up to three (3) days per week, provided your supervisor approves it.",
+      "sources": [
+        {
+          "page": 30,
+          "excerpt": "Some employers have moved to giving employees a specified number of days annually to use for \nvacation, illness, personal needs, etc. The downside of such a policy, however, is that sick employees may come to work in order to \navoid losing vacation time and infect other employees. Such a policy may reduce employee abuse of sick leave."
+        },
+        {
+          "page": 11,
+          "excerpt": "You may telecommute up to three (3) days per week with the approval of \nyour supervisor. If flexible scheduling, \ntelecommuting, or other variations on the traditional work week are appropriate to your \nbusiness, describe your policy and practices clearly. during those hours. The Company also offers employees the opportunity to telecommute."
+        },
+        {
+          "page": 29,
+          "excerpt": "Employees may, \nhowever, carry over a maximum of five (5) days of vacation from one year to the next. For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw oyees may take for religious observance, e.g., Jewish High Holy Days."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 414.56140000082087,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 3009.145299998636,
+        "llm_time_ms": 689.1747999979998,
+        "total_time_ms": 4164.515600001323
+      }
+    },
+    "answer": "Yes. You may telecommute up to three (3) days per week, provided your supervisor approves it.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 414.56140000082087,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 3009.145299998636,
+      "llm_time_ms": 689.1747999979998,
+      "total_time_ms": 4164.515600001323
+    },
+    "sources": [
+      {
+        "page": 30,
+        "excerpt": "Some employers have moved to giving employees a specified number of days annually to use for \nvacation, illness, personal needs, etc. The downside of such a policy, however, is that sick employees may come to work in order to \navoid losing vacation time and infect other employees. Such a policy may reduce employee abuse of sick leave."
+      },
+      {
+        "page": 11,
+        "excerpt": "You may telecommute up to three (3) days per week with the approval of \nyour supervisor. If flexible scheduling, \ntelecommuting, or other variations on the traditional work week are appropriate to your \nbusiness, describe your policy and practices clearly. during those hours. The Company also offers employees the opportunity to telecommute."
+      },
+      {
+        "page": 29,
+        "excerpt": "Employees may, \nhowever, carry over a maximum of five (5) days of vacation from one year to the next. For example, an employee who works 30 \nhours per week will earn ¾ of the amount of vacation a full-time employee earns, while one \nw oyees may take for religious observance, e.g., Jewish High Holy Days."
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "question": "What happens if bad weather prevents me from getting to work while the company remains open?",
+    "expected_answer": "The absence is charged first to personal/sick time, then vacation time, and then unpaid time.",
+    "category": "multi_hop",
+    "session_id": "c11eef2b-96bd-44e4-8123-6a5f7820ae3e",
+    "client_total_latency_ms": 8536.37,
+    "api_response": {
+      "question": "What happens if bad weather prevents me from getting to work while the company remains open?",
+      "answer": "If the company stays open but you cannot get to work because of inclement weather, you must call your immediate supervisor to report the delay. The absence will be charged to (1) personal/sick time, (2) vacation time, or (3) unpaid time, in that order.",
+      "sources": [
+        {
+          "page": 12,
+          "excerpt": "If the Company’s facilities are open and you are delayed \ngetting to work or cannot get to work at all because of inclement weather, the absence will be common sense and your best \njudgment, however, when traveling to work in inclement weather."
+        },
+        {
+          "page": 12,
+          "excerpt": "Inclement Weather \nThe Company is open for business unless there is a government-declared state of emergency or \nunless you are advised otherwise by your supervisor. If you are \ndelayed, you must call your immediate supervisor to state the reason for the delay. You are expected to be at your workstation at the beginning of each business day. In"
+        },
+        {
+          "page": 13,
+          "excerpt": "When potentially dangerous weather develops during the day and a decision is made by the \nCompany to close early, you will be compensated for the full day. You \nshould always use your judgment about your own safety in getting to work. Employer Note:  Generally exempt employees must be paid if they work at all during the day."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 499.4319000034011,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2989.3514000068535,
+        "llm_time_ms": 4975.558900005126,
+        "total_time_ms": 8517.207800003234
+      }
+    },
+    "answer": "If the company stays open but you cannot get to work because of inclement weather, you must call your immediate supervisor to report the delay. The absence will be charged to (1) personal/sick time, (2) vacation time, or (3) unpaid time, in that order.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 499.4319000034011,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2989.3514000068535,
+      "llm_time_ms": 4975.558900005126,
+      "total_time_ms": 8517.207800003234
+    },
+    "sources": [
+      {
+        "page": 12,
+        "excerpt": "If the Company’s facilities are open and you are delayed \ngetting to work or cannot get to work at all because of inclement weather, the absence will be common sense and your best \njudgment, however, when traveling to work in inclement weather."
+      },
+      {
+        "page": 12,
+        "excerpt": "Inclement Weather \nThe Company is open for business unless there is a government-declared state of emergency or \nunless you are advised otherwise by your supervisor. If you are \ndelayed, you must call your immediate supervisor to state the reason for the delay. You are expected to be at your workstation at the beginning of each business day. In"
+      },
+      {
+        "page": 13,
+        "excerpt": "When potentially dangerous weather develops during the day and a decision is made by the \nCompany to close early, you will be compensated for the full day. You \nshould always use your judgment about your own safety in getting to work. Employer Note:  Generally exempt employees must be paid if they work at all during the day."
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "question": "If the company closes early because of severe weather, do employees get paid for the rest of the day?",
+    "expected_answer": "Yes. Employees are compensated as though they had worked until the end of their regularly scheduled hours.",
+    "category": "multi_hop",
+    "session_id": "364fdd73-404f-4cf3-8675-b47d14536797",
+    "client_total_latency_ms": 8322.64,
+    "api_response": {
+      "question": "If the company closes early because of severe weather, do employees get paid for the rest of the day?",
+      "answer": "Yes. If severe weather causes the company to close early, employees are compensated as if they had worked until the end of their regular scheduled hours for that day.",
+      "sources": [
+        {
+          "page": 13,
+          "excerpt": "When severe weather develops or is anticipated to develop during the day and a decision is made \nby Management to close before 5:30 p.m., you will be compensated as if you had worked to the \nend of your regularly scheduled hours for that day. Employer Note:  Generally exempt employees must be paid if they work at all during the day."
+        },
+        {
+          "page": 12,
+          "excerpt": "If the Company’s facilities are open and you are delayed \ngetting to work or cannot get to work at all because of inclement weather, the absence will be In the event that the Company’s facilities are closed by the Company or the government, \nemployees will be paid for the day."
+        },
+        {
+          "page": 29,
+          "excerpt": "Because the Company \nbelieves it is in the best interest of both the Company and our employees that employees take \nvacation time each year, the Company does not grant pay in lieu of time off. Vacation \nThe Company recognizes the importance of vacation time in providing rest, recreation and \npersonal enrichment."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 484.0209000030882,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 3020.325099998445,
+        "llm_time_ms": 4745.610500001931,
+        "total_time_ms": 8303.32289999933
+      }
+    },
+    "answer": "Yes. If severe weather causes the company to close early, employees are compensated as if they had worked until the end of their regular scheduled hours for that day.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 484.0209000030882,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 3020.325099998445,
+      "llm_time_ms": 4745.610500001931,
+      "total_time_ms": 8303.32289999933
+    },
+    "sources": [
+      {
+        "page": 13,
+        "excerpt": "When severe weather develops or is anticipated to develop during the day and a decision is made \nby Management to close before 5:30 p.m., you will be compensated as if you had worked to the \nend of your regularly scheduled hours for that day. Employer Note:  Generally exempt employees must be paid if they work at all during the day."
+      },
+      {
+        "page": 12,
+        "excerpt": "If the Company’s facilities are open and you are delayed \ngetting to work or cannot get to work at all because of inclement weather, the absence will be In the event that the Company’s facilities are closed by the Company or the government, \nemployees will be paid for the day."
+      },
+      {
+        "page": 29,
+        "excerpt": "Because the Company \nbelieves it is in the best interest of both the Company and our employees that employees take \nvacation time each year, the Company does not grant pay in lieu of time off. Vacation \nThe Company recognizes the importance of vacation time in providing rest, recreation and \npersonal enrichment."
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "question": "If I'm called for jury duty, do my company benefits continue?",
+    "expected_answer": "Yes. During jury duty, employees continue participating in insurance and other benefits as if they were working. Full-time employees also receive the difference between jury-duty compensation and current daily pay for the first five days, subject to applicable law.",
+    "category": "multi_hop",
+    "session_id": "e29f7f06-0265-47af-bfbe-f49d141c9823",
+    "client_total_latency_ms": 8264.91,
+    "api_response": {
+      "question": "If I'm called for jury duty, do my company benefits continue?",
+      "answer": "Yes. While on jury‑duty leave you are considered on a leave of absence and will continue to participate in insurance and other benefits as if you were working.",
+      "sources": [
+        {
+          "page": 33,
+          "excerpt": "The Company will compensate full-time employees for the difference between jury duty \ncompensation and your current daily pay for the first five days you serve as a juror (or in \naccordance with applicable law, if different). Be sure to review your state’s jury duty \nleave law for applicable requirements. ement."
+        },
+        {
+          "page": 33,
+          "excerpt": "Civic Duty Leave  \nJury Duty \nThe Company encourages employees to fulfill their civic duties. To that end, employees will be \nallowed leave to serve on a jury, if summoned. If you are called during \na particularly busy period, we may ask you to request a postponement. Jury duty can last from several days to several months or more."
+        },
+        {
+          "page": 35,
+          "excerpt": "35 \nCompany and the employee acknowledge that by agreeing to arbitrate each gives up its right to \nlitigate their employment dispute in court or to submit it to a jury. The decision of the arbitrator \nis final and binding. However, either party may seek to have a court of competent jurisdiction enforce an arbitration \naward."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 425.7226999980048,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 5895.102100002987,
+        "llm_time_ms": 1777.6491999975406,
+        "total_time_ms": 8249.728800001321
+      }
+    },
+    "answer": "Yes. While on jury‑duty leave you are considered on a leave of absence and will continue to participate in insurance and other benefits as if you were working.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 425.7226999980048,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 5895.102100002987,
+      "llm_time_ms": 1777.6491999975406,
+      "total_time_ms": 8249.728800001321
+    },
+    "sources": [
+      {
+        "page": 33,
+        "excerpt": "The Company will compensate full-time employees for the difference between jury duty \ncompensation and your current daily pay for the first five days you serve as a juror (or in \naccordance with applicable law, if different). Be sure to review your state’s jury duty \nleave law for applicable requirements. ement."
+      },
+      {
+        "page": 33,
+        "excerpt": "Civic Duty Leave  \nJury Duty \nThe Company encourages employees to fulfill their civic duties. To that end, employees will be \nallowed leave to serve on a jury, if summoned. If you are called during \na particularly busy period, we may ask you to request a postponement. Jury duty can last from several days to several months or more."
+      },
+      {
+        "page": 35,
+        "excerpt": "35 \nCompany and the employee acknowledge that by agreeing to arbitrate each gives up its right to \nlitigate their employment dispute in court or to submit it to a jury. The decision of the arbitrator \nis final and binding. However, either party may seek to have a court of competent jurisdiction enforce an arbitration \naward."
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "question": "If I resign, what happens to my unused vacation and personal leave?",
+    "expected_answer": "Accrued but unused vacation is paid in the final paycheck, while accrued but unused personal time is not paid upon termination. Excess leave used can be deducted from the final check(s).",
+    "category": "multi_hop",
+    "session_id": "711e8a11-2893-47c8-bd97-2d4a1f079c42",
+    "client_total_latency_ms": 8189.62,
+    "api_response": {
+      "question": "If I resign, what happens to my unused vacation and personal leave?",
+      "answer": "You will be paid for any accrued but unused vacation time in your final paycheck, but accrued but unused personal leave is not paid out. If you have taken more personal or vacation time than you accrued, the excess will be deducted from your final pay.",
+      "sources": [
+        {
+          "page": 34,
+          "excerpt": "34 \n \nPart 7 – Miscellaneous \nLeaving the Company \nIf you wish to resign your employment with the Company, you are requested to notify your \nmanager of your anticipated departure date at least two (2) weeks in advance.18 This notice \nshould be in the form of a written note or letter."
+        },
+        {
+          "page": 29,
+          "excerpt": "29 \nPart 6 – Holidays, Vacation and Other Leave \nReligious Observance \nFederal and state equal opportunity laws generally require employers to accommodate the \nreligious beliefs of employees, but do not require them to provide paid leave. Employees who require additional time off may use vacation and /or personal days. Vacation \nThe Company recogni"
+        },
+        {
+          "page": 32,
+          "excerpt": "Military Service Leave \nEmployees serving in the uniformed services, including the Army, Navy, Marine Corps, Air \nForce, Coast Guard, and Public Health Service commissioned corps, as well as the reserve \ncomponents of each of these services, may take unpaid military leave, as needed, to enable them \nto fulfill their obligations as service members."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 399.99140000145417,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 2922.7559999999357,
+        "llm_time_ms": 4797.684700002719,
+        "total_time_ms": 8170.003299994278
+      }
+    },
+    "answer": "You will be paid for any accrued but unused vacation time in your final paycheck, but accrued but unused personal leave is not paid out. If you have taken more personal or vacation time than you accrued, the excess will be deducted from your final pay.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 399.99140000145417,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 2922.7559999999357,
+      "llm_time_ms": 4797.684700002719,
+      "total_time_ms": 8170.003299994278
+    },
+    "sources": [
+      {
+        "page": 34,
+        "excerpt": "34 \n \nPart 7 – Miscellaneous \nLeaving the Company \nIf you wish to resign your employment with the Company, you are requested to notify your \nmanager of your anticipated departure date at least two (2) weeks in advance.18 This notice \nshould be in the form of a written note or letter."
+      },
+      {
+        "page": 29,
+        "excerpt": "29 \nPart 6 – Holidays, Vacation and Other Leave \nReligious Observance \nFederal and state equal opportunity laws generally require employers to accommodate the \nreligious beliefs of employees, but do not require them to provide paid leave. Employees who require additional time off may use vacation and /or personal days. Vacation \nThe Company recogni"
+      },
+      {
+        "page": 32,
+        "excerpt": "Military Service Leave \nEmployees serving in the uniformed services, including the Army, Navy, Marine Corps, Air \nForce, Coast Guard, and Public Health Service commissioned corps, as well as the reserve \ncomponents of each of these services, may take unpaid military leave, as needed, to enable them \nto fulfill their obligations as service members."
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "question": "If an employee believes they were discriminated against, what should they do, and are they protected from retaliation?",
+    "expected_answer": "They should report the matter to Human Resources. The handbook states that there will be no retaliation for a good-faith complaint, even if the investigation does not find sufficient evidence.",
+    "category": "multi_hop",
+    "session_id": "cbf81c1d-cc51-4096-b57a-220f523a0872",
+    "client_total_latency_ms": 9381.51,
+    "api_response": {
+      "question": "If an employee believes they were discriminated against, what should they do, and are they protected from retaliation?",
+      "answer": "They should promptly report the discrimination concern to the Human Resources Department. The company’s policy states that employees who file a good‑faith complaint are protected from retaliation.",
+      "sources": [
+        {
+          "page": 20,
+          "excerpt": "There will be no retaliation against any employee who files a complaint in good faith, even if the \nresult of the investigation produces insufficient evidence to support the complaint. er, leaves of absence, benefits, \ncompensation, and training. We seek to comply with all applicable federal, state and local laws \nrelated to discrimination."
+        },
+        {
+          "page": 16,
+          "excerpt": "You should set forth clearly here what \nemployees are permitted to do and what they are prohibited from doing. You should describe your current policy and practice \nhere. If you have no policy or practice, consider creating one that is appropriate for your \nbusiness and company culture. This policy is simply one suggestion."
+        },
+        {
+          "page": 22,
+          "excerpt": "n subjected to harassment or if you believe you have witnessed \nany form of harassment, you should immediately contact an appropriate manager, supervisor or \nHuman Resources staff member.14 An allegation against your own supervisor should be filed \nwith the Director of Human Resources."
+        }
+      ],
+      "metrics": {
+        "route": "DOCUMENT",
+        "router_time_ms": 434.3923000051291,
+        "rewrite_time_ms": 0.0,
+        "retrieval_time_ms": 8085.44830000028,
+        "llm_time_ms": 725.6077999991248,
+        "total_time_ms": 9361.703700000362
+      }
+    },
+    "answer": "They should promptly report the discrimination concern to the Human Resources Department. The company’s policy states that employees who file a good‑faith complaint are protected from retaliation.",
+    "route": "",
+    "metrics": {
+      "route": "DOCUMENT",
+      "router_time_ms": 434.3923000051291,
+      "rewrite_time_ms": 0.0,
+      "retrieval_time_ms": 8085.44830000028,
+      "llm_time_ms": 725.6077999991248,
+      "total_time_ms": 9361.703700000362
+    },
+    "sources": [
+      {
+        "page": 20,
+        "excerpt": "There will be no retaliation against any employee who files a complaint in good faith, even if the \nresult of the investigation produces insufficient evidence to support the complaint. er, leaves of absence, benefits, \ncompensation, and training. We seek to comply with all applicable federal, state and local laws \nrelated to discrimination."
+      },
+      {
+        "page": 16,
+        "excerpt": "You should set forth clearly here what \nemployees are permitted to do and what they are prohibited from doing. You should describe your current policy and practice \nhere. If you have no policy or practice, consider creating one that is appropriate for your \nbusiness and company culture. This policy is simply one suggestion."
+      },
+      {
+        "page": 22,
+        "excerpt": "n subjected to harassment or if you believe you have witnessed \nany form of harassment, you should immediately contact an appropriate manager, supervisor or \nHuman Resources staff member.14 An allegation against your own supervisor should be filed \nwith the Director of Human Resources."
+      }
+    ]
+  }
+]
