@@ -49,7 +49,7 @@ The goal is to demonstrate how a basic PDF chatbot can be extended into a more c
 [https://pdf-chatbot-rag-simple.streamlit.app](https://pdf-chatbot-rag-simple.streamlit.app)
 
 **⚡ Backend / FastAPI Docs:**  
-[[Open API Documentation →](https://pdf-chatbot-rag-y1lv.onrender.com/docs)](https://pdf-chatbot-rag-y1lv.onrender.com/docs)
+[https://pdf-chatbot-rag-y1lv.onrender.com/docs](https://pdf-chatbot-rag-y1lv.onrender.com/docs)
 
 Note: The backend is deployed on Render's free tier. The first request after inactivity may take around 30–60 seconds while the service wakes up.
 
