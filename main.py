@@ -206,36 +206,48 @@ def route_question(question: str, history: list):
     )
 
     prompt = f"""
-Classify the user question into exactly one route.
+Classify the user's question into exactly ONE route.
 
 Routes:
-DOCUMENT = answer requires information from the uploaded PDF.
-CONVERSATION = answer requires only previous conversation history.
-BOTH = answer requires both the PDF and previous conversation.
-NONE = answer requires neither the PDF nor conversation history.
+
+DOCUMENT
+Use DOCUMENT when the answer requires information from the uploaded PDF.
+
+CONVERSATION
+Use CONVERSATION when the answer requires only previous conversation history.
+
+BOTH
+Use BOTH when the answer requires both the PDF and previous conversation history.
+
+NONE
+Use NONE when the question requires neither the PDF nor conversation history.
 
 Question:
 {question}
 
 Conversation history:
-{history}
+{conversation}
 
-Return ONLY valid JSON in this exact format:
-{{"route":"DOCUMENT"}}
+Return ONLY ONE WORD from these four options:
 
-Allowed values:
 DOCUMENT
 CONVERSATION
 BOTH
 NONE
 """
+
     try:
+
         response = client.chat.completions.create(
             model="openai/gpt-oss-120b",
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a routing classifier. Return only valid JSON."
+                    "content": (
+                        "You are a routing classifier. "
+                        "Return ONLY ONE WORD: "
+                        "DOCUMENT, CONVERSATION, BOTH, or NONE."
+                    )
                 },
                 {
                     "role": "user",
@@ -243,8 +255,7 @@ NONE
                 }
             ],
             temperature=0,
-            max_tokens=20,
-            response_format={"type": "json_object"}
+            max_tokens=5
         )
 
         raw = response.choices[0].message.content
@@ -259,24 +270,25 @@ NONE
             print("Router returned empty response.")
             return "DOCUMENT"
 
-        result = json.loads(raw)
+        route = raw.strip().upper()
 
-        route = result.get("route", "").upper().strip()
-
-        if route in {
+        # Handle accidental extra text from the model
+        for valid_route in [
             "CONVERSATION",
             "DOCUMENT",
             "BOTH",
             "NONE"
-        }:
-            return route
+        ]:
+            if valid_route in route:
+                return valid_route
 
-        print("Invalid route returned:", route)
+        print("Invalid route returned:", repr(route))
 
     except Exception as e:
         print("Router error:", e)
 
     return "DOCUMENT"
+
 @app.post("/ask")
 def ask_question(req: QuestionRequest):
 
