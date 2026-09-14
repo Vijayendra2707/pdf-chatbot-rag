@@ -43,17 +43,13 @@ Page-level source references
 
 The goal is to demonstrate how a basic PDF chatbot can be extended into a more complete, conversational and deployable RAG architecture.
 
-✦ Live Demo
+## 🚀 Live Demo
 
-<div align="center">
+**🌐 Live Application:**  
+[Open ContextRAG →](https://pdf-chatbot-rag-simple.streamlit.app)
 
-🚀 Try ContextRAG
-
-Open the Live Application →
-
-Open FastAPI Documentation →
-
-</div>
+**⚡ Backend / FastAPI Docs:**  
+[Open API Documentation →](https://pdf-chatbot-rag-y1lv.onrender.com/docs)
 
 Note: The backend is deployed on Render's free tier. The first request after inactivity may take around 30–60 seconds while the service wakes up.
 
