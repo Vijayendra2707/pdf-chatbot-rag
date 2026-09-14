@@ -1,416 +1,694 @@
-# 📄 PDF RAG Chatbot
+ContextRAG — Conversational Hybrid RAG Assistant
 
-A lightweight **Retrieval-Augmented Generation (RAG)** chatbot that allows users to upload PDF documents and ask questions based on their content.
+A conversational RAG system that combines hybrid retrieval, cross-encoder reranking, intelligent query routing, Redis conversation memory, and grounded LLM generation.
 
-The application extracts and chunks PDF text, generates semantic embeddings using the **Hugging Face Inference API**, retrieves relevant document chunks using **NumPy cosine similarity**, and uses **Groq Llama 3.1** to generate context-aware answers.
 
-Built using **FastAPI** for the backend and **Streamlit** for the frontend.
 
----
 
-## 🚀 Live Demo
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Try%20Now-brightgreen)](https://pdf-chatbot-rag-simple.streamlit.app)
 
-[![API Docs](https://img.shields.io/badge/FastAPI-API%20Docs-blue)](https://pdf-chatbot-rag-y1lv.onrender.com/docs)
 
-**🌐 Live Application:**  
+
+🚀 Live Demo
+
+Web Application:
 https://pdf-chatbot-rag-simple.streamlit.app
 
-**📘 Backend API Documentation:**  
+FastAPI Documentation:
 https://pdf-chatbot-rag-y1lv.onrender.com/docs
 
-> **Note:** The hosted application may take 30–60 seconds to wake up after being inactive because it is deployed on the free Render plan.
+Note: The backend is deployed on Render's free tier, so the first request after inactivity may take 30–60 seconds while the service wakes up.
 
----
+📸 Screenshots
 
-# 📸 Screenshots
-
-## Home Page
-
-> Add a screenshot of your homepage here.
-
-![Home](images/home.png)
-
----
-
-## Upload PDF
-
-> Add a screenshot after uploading a PDF.
-
-![Upload](images/upload.png)
-
----
-
-## Ask Questions
-
-> Add a screenshot showing a successful response.
-
-![Chat](images/chat.png)
-
----
+Home Page
 
 
-## ✨ Features
 
-- 📤 Upload PDF documents
-- 📄 Extract text using `pypdf`
-- ✂️ Automatic chunking with overlap
-- 🧠 Semantic embeddings using Hugging Face Inference API
-- 🔍 Context retrieval using cosine similarity
-- ⚡ Answer generation using Groq Llama 3.1
-- 💬 Interactive Streamlit interface
-- 🎯 Answers generated only from retrieved document context
-- 🚫 Returns **"Not found in PDF"** when information is unavailable
-- 🐳 Dockerized deployment
-- ☁️ Deployable on Render
+Chat & Retrieved Sources
 
-# 🧠 How It Works
 
-The chatbot follows a Retrieval-Augmented Generation (RAG) workflow.
 
-1. User uploads a PDF document.
-2. Text is extracted using **pypdf**.
-3. The extracted text is divided into overlapping chunks.
-4. Each chunk is converted into semantic embeddings using the **Hugging Face Inference API**.
-5. Embeddings are normalized and stored in memory.
-6. User submits a question.
-7. The question is embedded using the same embedding model.
-8. Cosine similarity identifies the most relevant document chunks.
-9. Retrieved chunks are sent to **Groq Llama 3.1**.
-10. The generated answer is displayed in the Streamlit interface.
+Add the screenshots above to an images/ folder in the repository.
 
----
+🧠 What is ContextRAG?
 
-# 🏗️ System Architecture
+ContextRAG is a conversational Retrieval-Augmented Generation (RAG) system that allows users to upload a PDF and interact with it through natural-language questions.
 
-```text
-                    User
-                      │
-                      ▼
-               Streamlit UI
-                      │
-          HTTP Requests (REST API)
-                      │
-                      ▼
-               FastAPI Backend
-                      │
-          ┌───────────┴───────────┐
-          │                       │
-          ▼                       ▼
-     Upload PDF            User Question
-          │                       │
-          ▼                       ▼
-      PDF Parsing         Question Embedding
-        (pypdf)       (Hugging Face API)
-          │                       │
-          ▼                       │
-     Text Chunking                │
-          │                       │
-          ▼                       │
-Document Embeddings               │
-(Hugging Face API)                │
-          │                       │
-          ▼                       │
-      NumPy Vectors ◄─────────────┘
-          │
-          ▼
-   Cosine Similarity
-          │
-          ▼
-Top-K Relevant Chunks
-          │
-          ▼
- Context + Question
-          │
-          ▼
-    Groq Llama 3.1
-          │
-          ▼
-        Response
-```
+Instead of relying on a single vector search, ContextRAG combines:
 
----
+Dense semantic retrieval
 
-# 🛠️ Tech Stack
+BM25 lexical retrieval
 
-| Category | Technology |
-|----------|------------|
-| Programming Language | Python |
-| Backend Framework | FastAPI |
-| Frontend Framework | Streamlit |
-| LLM | Groq (Llama 3.1) |
-| Embeddings | Hugging Face Inference API |
-| Retrieval | NumPy Cosine Similarity |
-| PDF Processing | pypdf |
-| API Communication | Requests |
-| Deployment | Render |
-| Containerization | Docker |
-| Version Control | Git & GitHub |
+Reciprocal Rank Fusion (RRF)
 
----
+BGE cross-encoder reranking
 
-# 📁 Project Structure
+LLM-based query routing
 
-```text
-pdf-chatbot-rag/
+Redis-backed conversation memory
+
+Context-aware query rewriting
+
+Grounded LLM generation
+
+Page-level source references
+
+The system demonstrates how a basic PDF chatbot can be extended into a more complete conversational RAG architecture.
+
+🏗️ Architecture
+
+                         ┌──────────────────────┐
+                         │      Streamlit       │
+                         │    Web Interface     │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │       FastAPI        │
+                         │      Backend API     │
+                         └──────────┬───────────┘
+                                    │
+                         ┌──────────▼───────────┐
+                         │     Query Router     │
+                         │     GPT-OSS-120B     │
+                         └──────────┬───────────┘
+                                    │
+                ┌───────────────────┼───────────────────┐
+                │                   │                   │
+                ▼                   ▼                   ▼
+          DOCUMENT            CONVERSATION           BOTH
+                │                   │                   │
+                ▼                   ▼                   ▼
+         Hybrid RAG           Redis Memory        Memory + RAG
+                │
+                ▼
+       ┌─────────────────────┐
+       │   Dense Retrieval   │
+       │   MiniLM Embedding  │
+       └──────────┬──────────┘
+                  │
+                  ├──────────────────┐
+                  │                  │
+                  ▼                  ▼
+           Dense Search          BM25 Search
+                  │                  │
+                  └────────┬─────────┘
+                           ▼
+                  Reciprocal Rank Fusion
+                           │
+                           ▼
+                  BGE Cross-Encoder
+                      Reranker
+                           │
+                           ▼
+                    Top-k Documents
+                           │
+                           ▼
+                    PDF Context Builder
+                           │
+                           ▼
+                    GPT-OSS-120B
+                           │
+                           ▼
+                      Final Answer
+
+✨ Key Features
+
+1. Hybrid Retrieval
+
+ContextRAG combines semantic and lexical retrieval rather than depending on a single search method.
+
+Dense Retrieval
+
+Uses:
+
+sentence-transformers/all-MiniLM-L6-v2
+
+Pipeline:
+
+Document Chunks
+      ↓
+MiniLM Embeddings
+      ↓
+Normalized Vectors
+      ↓
+Cosine Similarity
+
+BM25 Retrieval
+
+BM25 provides lexical retrieval and is useful for exact terms, names, policies, and phrases.
+
+Reciprocal Rank Fusion
+
+Dense and BM25 rankings are combined using RRF:
+
+Dense Results ──┐
+                ├──► RRF ──► Candidate Documents
+BM25 Results ───┘
+
+2. Cross-Encoder Reranking
+
+The initial hybrid retriever generates a candidate set. Those candidates are then reranked using a BGE cross-encoder.
+
+Query + Candidate Passage
+          ↓
+    BGE Cross-Encoder
+          ↓
+     Relevance Score
+          ↓
+       Top-k Docs
+
+Only the highest-ranked passages are passed to the generation model.
+
+3. Intelligent Query Routing
+
+The LLM router classifies queries into four routes:
+
+Route
+
+Purpose
+
+DOCUMENT
+
+Requires information from the uploaded PDF
+
+CONVERSATION
+
+Requires previous conversation history
+
+BOTH
+
+Requires both PDF and conversation history
+
+NONE
+
+Does not require PDF or conversation context
+
+Example:
+
+"What is the company's leave policy?"
+                 ↓
+             DOCUMENT
+                 ↓
+               RAG
+
+"What did we discuss earlier?"
+                 ↓
+           CONVERSATION
+                 ↓
+            Redis Memory
+
+"Based on what we discussed,
+what does the company policy say about this?"
+                 ↓
+                BOTH
+                 ↓
+         Memory + Hybrid RAG
+
+Routing avoids unnecessary document retrieval for purely conversational questions.
+
+4. Conversational Memory
+
+Conversation history is stored in Redis and associated with a unique session ID.
+
+session_id
+    ↓
+Redis
+    ↓
+chat:{session_id}
+
+Current configuration:
+
+Maximum messages: 10
+Memory TTL:       1 hour
+
+Users can also clear their conversation history through the application.
+
+5. Context-Aware Query Rewriting
+
+Follow-up questions can depend on previous conversation context.
+
+Example:
+
+User:
+"What is the jury duty policy?"
+
+User:
+"What about compensation?"
+
+The second query can be rewritten into a more complete retrieval query:
+
+"What does the company's jury duty policy
+say about compensation?"
+
+This improves retrieval for context-dependent follow-up questions.
+
+6. Grounded Generation
+
+The final LLM receives the retrieved PDF context and is instructed to answer using that context.
+
+User Question
+      +
+Retrieved Context
+      +
+Conversation Context
+      ↓
+Grounded Prompt
+      ↓
+GPT-OSS-120B
+      ↓
+Final Answer
+
+If the required information cannot be found in the retrieved PDF context, the system can respond:
+
+Not found in PDF
+
+This helps reduce unsupported answers and hallucination.
+
+7. Source References
+
+Retrieved documents retain their original PDF page information.
+
+Example:
+
+Answer:
+Employees are eligible for ...
+
+Sources:
+📄 Page 14
+📄 Page 6
+📄 Page 13
+
+This gives users a way to inspect the source material behind an answer.
+
+🔄 End-to-End Workflow
+
+1. Upload PDF
+
+PDF
+ ↓
+FastAPI
+ ↓
+Text Extraction
+ ↓
+Page-Aware Chunking
+
+2. Generate Embeddings
+
+Each chunk is converted into an embedding using all-MiniLM-L6-v2.
+
+3. Build BM25 Index
+
+The same chunks are indexed using BM25.
+
+4. Retrieve Candidates
+
+Query
+ ↓
+Dense Retrieval
+ ↓
+BM25 Retrieval
+ ↓
+Reciprocal Rank Fusion
+ ↓
+Candidate Documents
+
+5. Rerank Candidates
+
+Query + Candidate
+        ↓
+Cross-Encoder
+        ↓
+Relevance Score
+        ↓
+Top 3 Documents
+
+6. Generate Answer
+
+PDF Context
+     +
+User Question
+     +
+Conversation Context
+     ↓
+GPT-OSS-120B
+     ↓
+Final Answer + Sources
+
+🛠️ Tech Stack
+
+Component
+
+Technology
+
+Frontend
+
+Streamlit
+
+Backend
+
+FastAPI + Uvicorn
+
+LLM
+
+GPT-OSS-120B via Groq
+
+Embeddings
+
+all-MiniLM-L6-v2
+
+Semantic Retrieval
+
+Cosine Similarity
+
+Lexical Retrieval
+
+BM25
+
+Rank Fusion
+
+Reciprocal Rank Fusion
+
+Reranking
+
+BGE Cross-Encoder
+
+Memory
+
+Redis
+
+PDF Processing
+
+PyPDF
+
+Reranker Hosting
+
+Hugging Face Spaces + Gradio API
+
+Frontend Deployment
+
+Streamlit Cloud
+
+Backend Deployment
+
+Render
+
+📁 Project Structure
+
+ContextRAG/
 │
-├── app.py                 # Streamlit frontend
-├── main.py                # FastAPI backend
-├── rag.py                 # PDF processing & semantic retrieval
-├── requirements.txt       # Python dependencies
-├── Dockerfile             # Docker configuration
+├── app.py
+│   └── Streamlit frontend
+│
+├── main.py
+│   └── FastAPI backend and API routes
+│
+├── rag.py
+│   └── Hybrid retrieval and reranking pipeline
+│
+├── memory.py
+│   └── Redis conversation memory
+│
+├── requirements.txt
+├── .env
 ├── .gitignore
 ├── README.md
 │
-├── uploads/               # Temporary uploaded PDFs
+├── evaluation/
+│   └── context_rag_results.json
 │
-└── images/                # README screenshots
+└── images/
     ├── home.png
-    ├── upload.png
     └── chat.png
-```
 
----
+📊 Evaluation
 
-# ⚙️ Environment Variables
+The system was evaluated using a custom 30-question employee-handbook QA dataset covering:
 
-Create a `.env` file in the project root.
+Direct factual questions
 
-```env
+Policy questions
+
+Multi-step questions
+
+Conversational follow-ups
+
+Document-context questions
+
+Conversation-context questions
+
+Results
+
+Metric
+
+Result
+
+Evaluation Questions
+
+30
+
+Answer Accuracy
+
+~93%
+
+Median End-to-End Latency
+
+~4.6 sec
+
+Median Retrieval Latency
+
+~3.0 sec
+
+Median LLM Latency
+
+~0.76 sec
+
+The evaluation is a custom project benchmark and is not intended to represent a standardized RAG evaluation framework.
+
+🔬 Why Hybrid RAG?
+
+A vector-only retriever can struggle with exact terminology.
+
+For example:
+
+"jury duty compensation"
+
+Semantic retrieval may understand the general concept, while BM25 provides a complementary signal for exact terms.
+
+ContextRAG therefore combines:
+
+Semantic Search
+      +
+Keyword Search
+      ↓
+     RRF
+      ↓
+Cross-Encoder Reranking
+
+This gives the retrieval pipeline both semantic and lexical capabilities.
+
+💡 Design Decisions
+
+Why Dense Retrieval + BM25?
+
+Dense retrieval captures semantic relationships, while BM25 captures exact lexical matches.
+
+Why Reciprocal Rank Fusion?
+
+RRF combines rankings from different retrieval systems without requiring their raw relevance scores to be directly comparable.
+
+Why Cross-Encoder Reranking?
+
+Initial retrieval efficiently creates a high-recall candidate set. The cross-encoder then performs a more detailed relevance evaluation on that smaller set.
+
+Why Redis?
+
+Redis provides fast session-based conversation storage and TTL-based expiration.
+
+Why Query Routing?
+
+Not every user question requires document retrieval. Routing distinguishes between document questions, conversational questions, mixed questions, and unsupported/unrelated queries.
+
+🌐 Deployment Architecture
+
+                         Streamlit Cloud
+                              │
+                              ▼
+                         Web Interface
+                              │
+                              ▼
+                         Render / FastAPI
+                         ┌────┼────┐
+                         │    │    │
+                         ▼    ▼    ▼
+                      Redis Groq  HF Space
+                      Memory LLM   Reranker
+
+Streamlit Cloud — frontend
+
+Render — FastAPI backend
+
+Redis — conversation memory
+
+Groq — LLM inference
+
+Hugging Face Spaces — BGE reranker
+
+🔐 Environment Variables
+
+Create a .env file locally:
+
 GROQ_API_KEY=your_groq_api_key
 HF_TOKEN=your_huggingface_token
-```
+REDIS_URL=your_redis_connection_url
 
-For the deployed Streamlit frontend, configure:
+Never commit .env or API keys to GitHub.
 
-```env
-API_URL=https://pdf-chatbot-rag-y1lv.onrender.com
-```
+Recommended .gitignore:
 
-> **Note:** Never commit your `.env` file to GitHub.
+.env
+__pycache__/
+*.pyc
+venv/
 
----
+💻 Local Setup
 
-# 🚀 Running Locally
+1. Clone the repository
 
-## 1️⃣ Clone the repository
-
-```bash
 git clone https://github.com/Vijayendra2707/pdf-chatbot-rag.git
-
 cd pdf-chatbot-rag
-```
 
----
+2. Create a virtual environment
 
-## 2️⃣ Install dependencies
+Windows
 
-```bash
+python -m venv venv
+venv\Scripts\activate
+
+Linux / macOS
+
+python3 -m venv venv
+source venv/bin/activate
+
+3. Install dependencies
+
 pip install -r requirements.txt
-```
 
----
+4. Configure environment variables
 
-## 3️⃣ Configure environment variables
+Create .env:
 
-Create a `.env` file:
+GROQ_API_KEY=your_key
+HF_TOKEN=your_key
+REDIS_URL=your_redis_url
 
-```env
-GROQ_API_KEY=your_groq_api_key
-HF_TOKEN=your_huggingface_token
-```
+5. Start FastAPI
 
----
+uvicorn main:app --reload
 
-## 4️⃣ Start the FastAPI backend
+Backend:
 
-```bash
-python -m uvicorn main:app --reload
-```
+http://127.0.0.1:8000
 
-Open:
+API documentation:
 
-```
 http://127.0.0.1:8000/docs
-```
 
----
-
-## 5️⃣ Start the Streamlit frontend
+6. Start Streamlit
 
 Open another terminal:
 
-```bash
 streamlit run app.py
-```
 
-The application will open automatically in your browser.
+⚠️ Current Limitations
 
----
+The document index is maintained in application memory.
 
-# 🔌 API Endpoints
+Restarting the backend removes the currently indexed PDF.
 
-## Health Check
+The current implementation is optimized around a single active uploaded document.
 
-```http
-GET /
-```
+The externally hosted reranker adds network latency.
 
-Returns the API status.
+Retrieval latency can vary depending on external service availability.
 
----
+The application does not currently provide persistent document storage.
 
-## Upload PDF
+🔮 Future Improvements
 
-```http
-POST /upload
-```
+Potential improvements include:
 
-Uploads a PDF document, extracts text, generates embeddings, and creates the semantic search index.
+Persistent vector database integration
 
----
+Multi-document collections
 
-## Ask Question
+Document-level metadata filtering
 
-```http
-POST /ask
-```
+Streaming LLM responses
 
-### Request
+Faster local or self-hosted reranking
 
-```json
-{
-    "question": "What is the document about?"
-}
-```
+Hybrid retrieval score calibration
 
-### Response
+Automated RAG evaluation
 
-```json
-{
-    "answer": "..."
-}
-```
+Authentication and user accounts
 
----
+Persistent document storage
 
-# 🐳 Docker Deployment
+Background document indexing
 
-## Build Docker Image
+Query decomposition for complex questions
 
-```bash
-docker build -t pdf-rag-chatbot .
-```
+Better observability and request tracing
 
----
+🎯 Project Highlights
 
-## Run Container
+ContextRAG demonstrates an end-to-end conversational RAG architecture combining:
 
-```bash
-docker run -p 8000:8000 \
--e GROQ_API_KEY=your_groq_api_key \
--e HF_TOKEN=your_huggingface_token \
-pdf-rag-chatbot
-```
+Hybrid Retrieval
+       +
+BM25
+       +
+Dense Embeddings
+       +
+Reciprocal Rank Fusion
+       +
+Cross-Encoder Reranking
+       +
+LLM Query Routing
+       +
+Conversation Memory
+       +
+Query Rewriting
+       +
+Grounded Generation
+       +
+Source References
 
----
-# ⚠️ Current Limitations
+The project focuses on building a system that is:
 
-- The application currently indexes **one PDF at a time**.
-- Uploading a new PDF replaces the previously indexed document.
-- Document embeddings are stored **in memory**, so they are lost when the backend restarts.
-- Scanned PDFs without embedded text are not currently supported (OCR is not implemented).
-- The Hugging Face Inference API requires a valid API token and an internet connection.
-- Response quality depends on the retrieved document chunks and embedding model.
+Retrieval-aware
 
----
+Conversation-aware
 
-# 🚀 Future Improvements
+Grounded
 
-Planned enhancements include:
+Explainable
 
-- 📚 Multi-document support
-- 🗂️ Persistent vector storage
-- 👤 User authentication
-- 💬 Conversational memory for follow-up questions
-- 📄 Page number citations in responses
-- 🔍 Hybrid Retrieval (Semantic + Keyword Search)
-- ⚡ Retrieval reranking for improved accuracy
-- 🖼️ OCR support for scanned PDFs
-- 📊 Document summarization
-- 🌍 Multi-language document support
-- ☁️ Cloud object storage integration (AWS S3 / Azure Blob)
-- 📈 Analytics dashboard
-- 🔄 CI/CD pipeline using GitHub Actions
+Deployable
 
----
+👨‍💻 Author
 
-# 📈 Performance
+Vijayendra Rane
 
-| Metric | Value |
-|---------|--------|
-| Embedding Model | Hugging Face Inference API |
-| LLM | Groq Llama 3.1 |
-| Retrieval | Cosine Similarity |
-| Vector Storage | In-memory NumPy Arrays |
-| API Framework | FastAPI |
-| UI Framework | Streamlit |
+AI/ML & Generative AI Developer
 
----
+GitHub:
+https://github.com/Vijayendra2707
 
-# 💡 Learning Outcomes
+⭐ Support
 
-This project helped demonstrate practical knowledge of:
-
-- Retrieval-Augmented Generation (RAG)
-- Semantic Search
-- LLM Integration
-- REST API Development with FastAPI
-- Streamlit Application Development
-- Docker Containerization
-- Cloud Deployment using Render
-- PDF Processing
-- Prompt Engineering
-- Git & GitHub Workflow
-
----
-
-# 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome.
-
-If you'd like to contribute:
-
-1. Fork the repository
-2. Create a new feature branch
-
-```bash
-git checkout -b feature/your-feature
-```
-
-3. Commit your changes
-
-```bash
-git commit -m "Add new feature"
-```
-
-4. Push your branch
-
-```bash
-git push origin feature/your-feature
-```
-
-5. Open a Pull Request
-
----
-
-# 👨‍💻 Author
-
-## Vijayendra Rane
-
-Computer Science Engineering Student | AI • Machine Learning • Generative AI
-
-- GitHub: https://github.com/Vijayendra2707
-
----
+If you found this project useful, consider giving the repository a ⭐.
