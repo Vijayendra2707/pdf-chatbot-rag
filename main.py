@@ -239,7 +239,7 @@ NONE
     try:
 
         response = client.chat.completions.create(
-            model="openai/gpt-oss-120b",
+            model="openai/gpt-oss-20b",
             messages=[
                 {
                     "role": "system",
@@ -255,7 +255,8 @@ NONE
                 }
             ],
             temperature=0,
-            max_tokens=20
+            max_tokens=20,
+            reasoning_effort="low"
         )
 
         raw = response.choices[0].message.content
