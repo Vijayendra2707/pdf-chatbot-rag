@@ -1,41 +1,27 @@
-ContextRAG — Conversational Hybrid RAG Assistant
+<div align="center">
 
-A conversational RAG system that combines hybrid retrieval, cross-encoder reranking, intelligent query routing, Redis conversation memory, and grounded LLM generation.
+🧠 ContextRAG
 
+Conversational Hybrid RAG Assistant
 
+Hybrid Retrieval · RRF · Cross-Encoder Reranking · Query Routing · Redis Memory · Grounded Generation
 
-
-
-
-
-
-🚀 Live Demo
-
-Web Application:
-https://pdf-chatbot-rag-simple.streamlit.app
-
-FastAPI Documentation:
-https://pdf-chatbot-rag-y1lv.onrender.com/docs
-
-Note: The backend is deployed on Render's free tier, so the first request after inactivity may take 30–60 seconds while the service wakes up.
-
-📸 Screenshots
-
-Home Page
+<br>
 
 
 
-Chat & Retrieved Sources
 
 
 
-Add the screenshots above to an images/ folder in the repository.
 
-🧠 What is ContextRAG?
 
-ContextRAG is a conversational Retrieval-Augmented Generation (RAG) system that allows users to upload a PDF and interact with it through natural-language questions.
+</div>
 
-Instead of relying on a single vector search, ContextRAG combines:
+✦ Overview
+
+ContextRAG is a conversational Retrieval-Augmented Generation (RAG) system that allows users to upload a PDF and interact with it using natural language.
+
+Instead of relying on a single vector-search pipeline, ContextRAG combines:
 
 Dense semantic retrieval
 
@@ -55,9 +41,43 @@ Grounded LLM generation
 
 Page-level source references
 
-The system demonstrates how a basic PDF chatbot can be extended into a more complete conversational RAG architecture.
+The goal is to demonstrate how a basic PDF chatbot can be extended into a more complete, conversational and deployable RAG architecture.
 
-🏗️ Architecture
+✦ Live Demo
+
+<div align="center">
+
+🚀 Try ContextRAG
+
+Open the Live Application →
+
+Open FastAPI Documentation →
+
+</div>
+
+Note: The backend is deployed on Render's free tier. The first request after inactivity may take around 30–60 seconds while the service wakes up.
+
+✦ Screenshots
+
+🏠 Home Page
+
+<div align="center">
+
+<img src="images/home.png" alt="ContextRAG Home Page" width="850">
+
+</div>
+
+💬 Conversational RAG
+
+<div align="center">
+
+<img src="images/chat.png" alt="ContextRAG Chat Interface" width="850">
+
+</div>
+
+Screenshots are loaded directly from the repository's images/ folder.
+
+✦ Architecture
 
                          ┌──────────────────────┐
                          │      Streamlit       │
@@ -114,11 +134,11 @@ The system demonstrates how a basic PDF chatbot can be extended into a more comp
                            ▼
                       Final Answer
 
-✨ Key Features
+✦ Key Features
 
-1. Hybrid Retrieval
+01 — Hybrid Retrieval
 
-ContextRAG combines semantic and lexical retrieval rather than depending on a single search method.
+ContextRAG combines semantic and lexical retrieval.
 
 Dense Retrieval
 
@@ -138,19 +158,17 @@ Cosine Similarity
 
 BM25 Retrieval
 
-BM25 provides lexical retrieval and is useful for exact terms, names, policies, and phrases.
+BM25 provides lexical retrieval and is particularly useful for exact terms, names, policies and phrases.
 
 Reciprocal Rank Fusion
-
-Dense and BM25 rankings are combined using RRF:
 
 Dense Results ──┐
                 ├──► RRF ──► Candidate Documents
 BM25 Results ───┘
 
-2. Cross-Encoder Reranking
+02 — Cross-Encoder Reranking
 
-The initial hybrid retriever generates a candidate set. Those candidates are then reranked using a BGE cross-encoder.
+The hybrid retriever first creates a candidate set. The candidates are then reranked using a BGE cross-encoder.
 
 Query + Candidate Passage
           ↓
@@ -162,9 +180,9 @@ Query + Candidate Passage
 
 Only the highest-ranked passages are passed to the generation model.
 
-3. Intelligent Query Routing
+03 — Intelligent Query Routing
 
-The LLM router classifies queries into four routes:
+The LLM router classifies each question into one of four routes:
 
 Route
 
@@ -180,7 +198,7 @@ Requires previous conversation history
 
 BOTH
 
-Requires both PDF and conversation history
+Requires PDF + conversation history
 
 NONE
 
@@ -207,9 +225,7 @@ what does the company policy say about this?"
                  ↓
          Memory + Hybrid RAG
 
-Routing avoids unnecessary document retrieval for purely conversational questions.
-
-4. Conversational Memory
+04 — Conversational Memory
 
 Conversation history is stored in Redis and associated with a unique session ID.
 
@@ -226,7 +242,7 @@ Memory TTL:       1 hour
 
 Users can also clear their conversation history through the application.
 
-5. Context-Aware Query Rewriting
+05 — Context-Aware Query Rewriting
 
 Follow-up questions can depend on previous conversation context.
 
@@ -238,16 +254,16 @@ User:
 User:
 "What about compensation?"
 
-The second query can be rewritten into a more complete retrieval query:
+The second query can be rewritten into:
 
 "What does the company's jury duty policy
 say about compensation?"
 
-This improves retrieval for context-dependent follow-up questions.
+This makes context-dependent follow-up questions easier for the retrieval system to process.
 
-6. Grounded Generation
+06 — Grounded Generation
 
-The final LLM receives the retrieved PDF context and is instructed to answer using that context.
+The final LLM receives retrieved PDF context and relevant conversation context.
 
 User Question
       +
@@ -265,9 +281,7 @@ If the required information cannot be found in the retrieved PDF context, the sy
 
 Not found in PDF
 
-This helps reduce unsupported answers and hallucination.
-
-7. Source References
+07 — Source References
 
 Retrieved documents retain their original PDF page information.
 
@@ -281,11 +295,11 @@ Sources:
 📄 Page 6
 📄 Page 13
 
-This gives users a way to inspect the source material behind an answer.
+This allows users to inspect the source material behind an answer.
 
-🔄 End-to-End Workflow
+✦ End-to-End Workflow
 
-1. Upload PDF
+01. Upload PDF
 
 PDF
  ↓
@@ -295,15 +309,15 @@ Text Extraction
  ↓
 Page-Aware Chunking
 
-2. Generate Embeddings
+02. Generate Embeddings
 
 Each chunk is converted into an embedding using all-MiniLM-L6-v2.
 
-3. Build BM25 Index
+03. Build BM25 Index
 
-The same chunks are indexed using BM25.
+The same document chunks are indexed using BM25.
 
-4. Retrieve Candidates
+04. Retrieve Candidates
 
 Query
  ↓
@@ -315,7 +329,7 @@ Reciprocal Rank Fusion
  ↓
 Candidate Documents
 
-5. Rerank Candidates
+05. Rerank Candidates
 
 Query + Candidate
         ↓
@@ -325,7 +339,7 @@ Relevance Score
         ↓
 Top 3 Documents
 
-6. Generate Answer
+06. Generate Answer
 
 PDF Context
      +
@@ -337,9 +351,9 @@ GPT-OSS-120B
      ↓
 Final Answer + Sources
 
-🛠️ Tech Stack
+✦ Tech Stack
 
-Component
+Layer
 
 Technology
 
@@ -395,7 +409,7 @@ Backend Deployment
 
 Render
 
-📁 Project Structure
+✦ Project Structure
 
 ContextRAG/
 │
@@ -423,7 +437,7 @@ ContextRAG/
     ├── home.png
     └── chat.png
 
-📊 Evaluation
+✦ Evaluation
 
 The system was evaluated using a custom 30-question employee-handbook QA dataset covering:
 
@@ -439,7 +453,7 @@ Document-context questions
 
 Conversation-context questions
 
-Results
+📊 Results
 
 Metric
 
@@ -467,7 +481,7 @@ Median LLM Latency
 
 The evaluation is a custom project benchmark and is not intended to represent a standardized RAG evaluation framework.
 
-🔬 Why Hybrid RAG?
+✦ Why Hybrid RAG?
 
 A vector-only retriever can struggle with exact terminology.
 
@@ -489,7 +503,7 @@ Cross-Encoder Reranking
 
 This gives the retrieval pipeline both semantic and lexical capabilities.
 
-💡 Design Decisions
+✦ Design Decisions
 
 Why Dense Retrieval + BM25?
 
@@ -509,9 +523,9 @@ Redis provides fast session-based conversation storage and TTL-based expiration.
 
 Why Query Routing?
 
-Not every user question requires document retrieval. Routing distinguishes between document questions, conversational questions, mixed questions, and unsupported/unrelated queries.
+Not every user question requires document retrieval. Routing distinguishes between document questions, conversational questions, mixed questions and unsupported/unrelated queries.
 
-🌐 Deployment Architecture
+✦ Deployment
 
                          Streamlit Cloud
                               │
@@ -526,17 +540,31 @@ Not every user question requires document retrieval. Routing distinguishes betwe
                       Redis Groq  HF Space
                       Memory LLM   Reranker
 
-Streamlit Cloud — frontend
+Service
 
-Render — FastAPI backend
+Responsibility
 
-Redis — conversation memory
+Streamlit Cloud
 
-Groq — LLM inference
+Frontend
 
-Hugging Face Spaces — BGE reranker
+Render
 
-🔐 Environment Variables
+FastAPI backend
+
+Redis
+
+Conversation memory
+
+Groq
+
+LLM inference
+
+Hugging Face Spaces
+
+BGE reranker
+
+✦ Environment Variables
 
 Create a .env file locally:
 
@@ -553,14 +581,14 @@ __pycache__/
 *.pyc
 venv/
 
-💻 Local Setup
+✦ Local Setup
 
-1. Clone the repository
+01. Clone the repository
 
 git clone https://github.com/Vijayendra2707/pdf-chatbot-rag.git
 cd pdf-chatbot-rag
 
-2. Create a virtual environment
+02. Create a virtual environment
 
 Windows
 
@@ -572,11 +600,11 @@ Linux / macOS
 python3 -m venv venv
 source venv/bin/activate
 
-3. Install dependencies
+03. Install dependencies
 
 pip install -r requirements.txt
 
-4. Configure environment variables
+04. Configure environment variables
 
 Create .env:
 
@@ -584,7 +612,7 @@ GROQ_API_KEY=your_key
 HF_TOKEN=your_key
 REDIS_URL=your_redis_url
 
-5. Start FastAPI
+05. Start FastAPI
 
 uvicorn main:app --reload
 
@@ -596,13 +624,13 @@ API documentation:
 
 http://127.0.0.1:8000/docs
 
-6. Start Streamlit
+06. Start Streamlit
 
 Open another terminal:
 
 streamlit run app.py
 
-⚠️ Current Limitations
+✦ Current Limitations
 
 The document index is maintained in application memory.
 
@@ -616,9 +644,7 @@ Retrieval latency can vary depending on external service availability.
 
 The application does not currently provide persistent document storage.
 
-🔮 Future Improvements
-
-Potential improvements include:
+✦ Future Improvements
 
 Persistent vector database integration
 
@@ -644,7 +670,7 @@ Query decomposition for complex questions
 
 Better observability and request tracing
 
-🎯 Project Highlights
+✦ Project Highlights
 
 ContextRAG demonstrates an end-to-end conversational RAG architecture combining:
 
@@ -668,27 +694,24 @@ Grounded Generation
        +
 Source References
 
-The project focuses on building a system that is:
+Built to be
 
-Retrieval-aware
+Retrieval-aware · Conversation-aware · Grounded · Explainable · Deployable
 
-Conversation-aware
+✦ Author
 
-Grounded
-
-Explainable
-
-Deployable
-
-👨‍💻 Author
+<div align="center">
 
 Vijayendra Rane
 
 AI/ML & Generative AI Developer
 
-GitHub:
-https://github.com/Vijayendra2707
+GitHub →
 
-⭐ Support
+</div>
 
-If you found this project useful, consider giving the repository a ⭐.
+<div align="center">
+
+⭐ If you found this project useful, consider giving the repository a star.
+
+</div>
