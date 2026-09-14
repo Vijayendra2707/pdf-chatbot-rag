@@ -255,7 +255,7 @@ NONE
                 }
             ],
             temperature=0,
-            max_tokens=5
+            max_tokens=20
         )
 
         raw = response.choices[0].message.content
